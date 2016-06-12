@@ -1,0 +1,1168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Euro2016BetsDeveloppementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Euro2016BetsDeveloppementModelStoreContainer">
+          <EntitySet Name="bet" EntityType="Euro2016BetsDeveloppementModel.Store.bet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="country" EntityType="Euro2016BetsDeveloppementModel.Store.country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="groups" EntityType="Euro2016BetsDeveloppementModel.Store.groups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="groupsmatchschedule" EntityType="Euro2016BetsDeveloppementModel.Store.groupsmatchschedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="matchs" EntityType="Euro2016BetsDeveloppementModel.Store.matchs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="matchsteam" EntityType="Euro2016BetsDeveloppementModel.Store.matchsteam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Parameters" EntityType="Euro2016BetsDeveloppementModel.Store.Parameters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="phase" EntityType="Euro2016BetsDeveloppementModel.Store.phase" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="players" EntityType="Euro2016BetsDeveloppementModel.Store.players" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="scorer" EntityType="Euro2016BetsDeveloppementModel.Store.scorer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="stadium" EntityType="Euro2016BetsDeveloppementModel.Store.stadium" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="team" EntityType="Euro2016BetsDeveloppementModel.Store.team" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="towns" EntityType="Euro2016BetsDeveloppementModel.Store.towns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usr" EntityType="Euro2016BetsDeveloppementModel.Store.Usr" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="Euro2016BetsDeveloppementModel.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Euro2016BetsDeveloppementModel.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="Euro2016BetsDeveloppementModel.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Euro2016BetsDeveloppementModel.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MatchsList" EntityType="Euro2016BetsDeveloppementModel.Store.MatchsList" store:Type="Views" store:Schema="dbo" store:Name="MatchsList">
+            <DefiningQuery>SELECT 
+      [MatchsList].[Idt] AS [Idt], 
+      [MatchsList].[Number] AS [Number], 
+      [MatchsList].[Groups_Cod] AS [Groups_Cod], 
+      [MatchsList].[ScheduleDate] AS [ScheduleDate], 
+      [MatchsList].[Phase_Idt] AS [Phase_Idt], 
+      [MatchsList].[Phase_Lbl] AS [Phase_Lbl], 
+      [MatchsList].[Stadium_Name] AS [Stadium_Name], 
+      [MatchsList].[Town_Name] AS [Town_Name], 
+      [MatchsList].[Team_Home] AS [Team_Home], 
+      [MatchsList].[Team_Home_Label] AS [Team_Home_Label], 
+      [MatchsList].[ImageHome] AS [ImageHome], 
+      [MatchsList].[Score_Home] AS [Score_Home], 
+      [MatchsList].[Team_Away] AS [Team_Away], 
+      [MatchsList].[Team_Away_Label] AS [Team_Away_Label], 
+      [MatchsList].[ImageAway] AS [ImageAway], 
+      [MatchsList].[Score_Away] AS [Score_Away]
+      FROM [dbo].[MatchsList] AS [MatchsList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UsrMatch" EntityType="Euro2016BetsDeveloppementModel.Store.UsrMatch" store:Type="Views" store:Schema="dbo" store:Name="UsrMatch">
+            <DefiningQuery>SELECT 
+      [UsrMatch].[Matchs_Idt] AS [Matchs_Idt], 
+      [UsrMatch].[Usr_Idt] AS [Usr_Idt], 
+      [UsrMatch].[Usr_Name] AS [Usr_Name], 
+      [UsrMatch].[Bet_Idt_Home] AS [Bet_Idt_Home], 
+      [UsrMatch].[HomeScore] AS [HomeScore], 
+      [UsrMatch].[Bet_Idt_Away] AS [Bet_Idt_Away], 
+      [UsrMatch].[AwayScore] AS [AwayScore], 
+      [UsrMatch].[Idt] AS [Idt], 
+      [UsrMatch].[Number] AS [Number], 
+      [UsrMatch].[Groups_Cod] AS [Groups_Cod], 
+      [UsrMatch].[ScheduleDate] AS [ScheduleDate], 
+      [UsrMatch].[Finished] AS [Finished], 
+      [UsrMatch].[Phase_Idt] AS [Phase_Idt], 
+      [UsrMatch].[Phase_Lbl] AS [Phase_Lbl], 
+      [UsrMatch].[Stadium_Name] AS [Stadium_Name], 
+      [UsrMatch].[Town_Name] AS [Town_Name], 
+      [UsrMatch].[Team_Home] AS [Team_Home], 
+      [UsrMatch].[Team_Home_Label] AS [Team_Home_Label], 
+      [UsrMatch].[ImageHome] AS [ImageHome], 
+      [UsrMatch].[Score_Home] AS [Score_Home], 
+      [UsrMatch].[Team_Away] AS [Team_Away], 
+      [UsrMatch].[Team_Away_Label] AS [Team_Away_Label], 
+      [UsrMatch].[ImageAway] AS [ImageAway], 
+      [UsrMatch].[Score_Away] AS [Score_Away], 
+      [UsrMatch].[MatchIsFullFilled] AS [MatchIsFullFilled]
+      FROM [dbo].[UsrMatch] AS [UsrMatch]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="Bet_Matchs_Fk" Association="Euro2016BetsDeveloppementModel.Store.Bet_Matchs_Fk">
+            <End Role="matchs" EntitySet="matchs" />
+            <End Role="bet" EntitySet="bet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Euro2016BetsDeveloppementModel.Store.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="Euro2016BetsDeveloppementModel.Store.fk_UserId">
+            <End Role="Usr" EntitySet="Usr" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="Matchs_Phase_Fk" Association="Euro2016BetsDeveloppementModel.Store.Matchs_Phase_Fk">
+            <End Role="phase" EntitySet="phase" />
+            <End Role="matchs" EntitySet="matchs" />
+          </AssociationSet>
+          <AssociationSet Name="Matchs_Stadium_Fk" Association="Euro2016BetsDeveloppementModel.Store.Matchs_Stadium_Fk">
+            <End Role="stadium" EntitySet="stadium" />
+            <End Role="matchs" EntitySet="matchs" />
+          </AssociationSet>
+          <AssociationSet Name="MatchsTeam_Match_Fk" Association="Euro2016BetsDeveloppementModel.Store.MatchsTeam_Match_Fk">
+            <End Role="matchs" EntitySet="matchs" />
+            <End Role="matchsteam" EntitySet="matchsteam" />
+          </AssociationSet>
+          <AssociationSet Name="MatchsTeam_Team_Fk" Association="Euro2016BetsDeveloppementModel.Store.MatchsTeam_Team_Fk">
+            <End Role="team" EntitySet="team" />
+            <End Role="matchsteam" EntitySet="matchsteam" />
+          </AssociationSet>
+          <AssociationSet Name="Stadium_Towns_Fk" Association="Euro2016BetsDeveloppementModel.Store.Stadium_Towns_Fk">
+            <End Role="towns" EntitySet="towns" />
+            <End Role="stadium" EntitySet="stadium" />
+          </AssociationSet>
+          <AssociationSet Name="Team_Country_Fk" Association="Euro2016BetsDeveloppementModel.Store.Team_Country_Fk">
+            <End Role="country" EntitySet="country" />
+            <End Role="team" EntitySet="team" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="bet">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HomeAway" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Score" Type="smallint" />
+          <Property Name="Matchs_Idt" Type="int" Nullable="false" />
+          <Property Name="Usr_Idt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="nchar" MaxLength="3" />
+          <Property Name="Lbl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flag" Type="varbinary(max)" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6035: La relation 'Matchs_Groups_Fk' a des colonnes qui ne font pas partie de la clé de la table du côté primaire de la relation. La relation a été exclue.
+      Avertissement 6035: La relation 'Team_Groups_Fk' a des colonnes qui ne font pas partie de la clé de la table du côté primaire de la relation. La relation a été exclue.
+      -->
+        <EntityType Name="groups">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="nchar" MaxLength="3" />
+          <Property Name="Lbl" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="groupsmatchschedule">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MatchDay" Type="smallint" Nullable="false" />
+          <Property Name="NumOrderHome" Type="smallint" Nullable="false" />
+          <Property Name="NumOrderAway" Type="smallint" />
+        </EntityType>
+        <EntityType Name="matchs">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="smallint" />
+          <Property Name="Groups_Cod" Type="nchar" MaxLength="3" />
+          <Property Name="Phase_Idt" Type="int" />
+          <Property Name="ScheduleDate" Type="datetime2" Precision="0" />
+          <Property Name="Stadium_Idt" Type="int" />
+        </EntityType>
+        <EntityType Name="matchsteam">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Matchs_Idt" Type="int" Nullable="false" />
+          <Property Name="AwayHome" Type="char" MaxLength="1" />
+          <Property Name="team_idt" Type="int" />
+          <Property Name="Score" Type="smallint" />
+          <Property Name="Calc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="phase">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Lbl" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="players">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number" Type="smallint" />
+          <Property Name="Team_Idt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="scorer">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Minute" Type="nvarchar" MaxLength="45" />
+          <Property Name="Players_Idt" Type="int" Nullable="false" />
+          <Property Name="Match_Idt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stadium">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Towns_Idt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="nchar" MaxLength="3" />
+          <Property Name="Lbl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Country_Idt" Type="int" Nullable="false" />
+          <Property Name="Groups_Cod" Type="nchar" MaxLength="3" />
+          <Property Name="NumOrder" Type="smallint" />
+        </EntityType>
+        <EntityType Name="towns">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usr">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="55" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="56" />
+          <Property Name="eMail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « Euro2016BetsDeveloppement.dbo.MatchsList » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="MatchsList">
+          <Key>
+            <PropertyRef Name="Idt" />
+            <PropertyRef Name="Phase_Idt" />
+            <PropertyRef Name="Phase_Lbl" />
+            <PropertyRef Name="Stadium_Name" />
+            <PropertyRef Name="Town_Name" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" />
+          <Property Name="Number" Type="smallint" />
+          <Property Name="Groups_Cod" Type="nchar" MaxLength="3" />
+          <Property Name="ScheduleDate" Type="datetime2" Precision="0" />
+          <Property Name="Phase_Idt" Type="int" Nullable="false" />
+          <Property Name="Phase_Lbl" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Stadium_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Town_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Team_Home" Type="nchar" MaxLength="3" />
+          <Property Name="Team_Home_Label" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageHome" Type="nvarchar" MaxLength="117" />
+          <Property Name="Score_Home" Type="smallint" />
+          <Property Name="Team_Away" Type="nchar" MaxLength="3" />
+          <Property Name="Team_Away_Label" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageAway" Type="nvarchar" MaxLength="117" />
+          <Property Name="Score_Away" Type="smallint" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « Euro2016BetsDeveloppement.dbo.UsrMatch » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="UsrMatch">
+          <Key>
+            <PropertyRef Name="Matchs_Idt" />
+            <PropertyRef Name="Usr_Idt" />
+            <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="Idt" />
+            <PropertyRef Name="Finished" />
+            <PropertyRef Name="Phase_Idt" />
+            <PropertyRef Name="Phase_Lbl" />
+            <PropertyRef Name="Stadium_Name" />
+            <PropertyRef Name="Town_Name" />
+            <PropertyRef Name="MatchIsFullFilled" />
+          </Key>
+          <Property Name="Matchs_Idt" Type="int" Nullable="false" />
+          <Property Name="Usr_Idt" Type="int" Nullable="false" />
+          <Property Name="Usr_Name" Type="nvarchar" Nullable="false" MaxLength="55" />
+          <Property Name="Bet_Idt_Home" Type="int" />
+          <Property Name="HomeScore" Type="smallint" />
+          <Property Name="Bet_Idt_Away" Type="int" />
+          <Property Name="AwayScore" Type="smallint" />
+          <Property Name="Idt" Type="int" Nullable="false" />
+          <Property Name="Number" Type="smallint" />
+          <Property Name="Groups_Cod" Type="nchar" MaxLength="3" />
+          <Property Name="ScheduleDate" Type="datetime2" Precision="0" />
+          <Property Name="Finished" Type="int" Nullable="false" />
+          <Property Name="Phase_Idt" Type="int" Nullable="false" />
+          <Property Name="Phase_Lbl" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Stadium_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Town_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Team_Home" Type="nchar" MaxLength="3" />
+          <Property Name="Team_Home_Label" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageHome" Type="nvarchar" MaxLength="117" />
+          <Property Name="Score_Home" Type="smallint" />
+          <Property Name="Team_Away" Type="nchar" MaxLength="3" />
+          <Property Name="Team_Away_Label" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageAway" Type="nvarchar" MaxLength="117" />
+          <Property Name="Score_Away" Type="smallint" />
+          <Property Name="MatchIsFullFilled" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Bet_Matchs_Fk">
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.Store.matchs" Multiplicity="1" />
+          <End Role="bet" Type="Euro2016BetsDeveloppementModel.Store.bet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="matchs">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="bet">
+              <PropertyRef Name="Matchs_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Euro2016BetsDeveloppementModel.Store.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Euro2016BetsDeveloppementModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="Usr" Type="Euro2016BetsDeveloppementModel.Store.Usr" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Euro2016BetsDeveloppementModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usr">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Matchs_Phase_Fk">
+          <End Role="phase" Type="Euro2016BetsDeveloppementModel.Store.phase" Multiplicity="0..1" />
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.Store.matchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phase">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchs">
+              <PropertyRef Name="Phase_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Matchs_Stadium_Fk">
+          <End Role="stadium" Type="Euro2016BetsDeveloppementModel.Store.stadium" Multiplicity="0..1" />
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.Store.matchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stadium">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchs">
+              <PropertyRef Name="Stadium_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MatchsTeam_Match_Fk">
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.Store.matchs" Multiplicity="1" />
+          <End Role="matchsteam" Type="Euro2016BetsDeveloppementModel.Store.matchsteam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="matchs">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchsteam">
+              <PropertyRef Name="Matchs_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MatchsTeam_Team_Fk">
+          <End Role="team" Type="Euro2016BetsDeveloppementModel.Store.team" Multiplicity="0..1" />
+          <End Role="matchsteam" Type="Euro2016BetsDeveloppementModel.Store.matchsteam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="team">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchsteam">
+              <PropertyRef Name="team_idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stadium_Towns_Fk">
+          <End Role="towns" Type="Euro2016BetsDeveloppementModel.Store.towns" Multiplicity="1" />
+          <End Role="stadium" Type="Euro2016BetsDeveloppementModel.Store.stadium" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="towns">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="stadium">
+              <PropertyRef Name="Towns_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Team_Country_Fk">
+          <End Role="country" Type="Euro2016BetsDeveloppementModel.Store.country" Multiplicity="1" />
+          <End Role="team" Type="Euro2016BetsDeveloppementModel.Store.team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="team">
+              <PropertyRef Name="Country_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CurrentDate" ReturnType="datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PostBet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMatchsIdt" Type="int" Mode="In" />
+          <Parameter Name="pUsrIdt" Type="int" Mode="In" />
+          <Parameter Name="pHomeAway" Type="char" Mode="In" />
+          <Parameter Name="pScore" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PostBetAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMatchsIdt" Type="int" Mode="In" />
+          <Parameter Name="pUsrIdt" Type="int" Mode="In" />
+          <Parameter Name="pScore" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PostBetFull" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMatchsIdt" Type="int" Mode="In" />
+          <Parameter Name="pUsrName" Type="nvarchar" Mode="In" />
+          <Parameter Name="pScoreHome" Type="int" Mode="In" />
+          <Parameter Name="pScoreAway" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PostBetHome" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMatchsIdt" Type="int" Mode="In" />
+          <Parameter Name="pUsrIdt" Type="int" Mode="In" />
+          <Parameter Name="pScore" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PostScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMatchIdt" Type="int" Mode="In" />
+          <Parameter Name="pScoreHome" Type="int" Mode="In" />
+          <Parameter Name="pScoreAway" Type="int" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Euro2016BetsDeveloppementModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Euro2016BetsDeveloppementEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="bet" EntityType="Euro2016BetsDeveloppementModel.bet" />
+          <EntitySet Name="country" EntityType="Euro2016BetsDeveloppementModel.country" />
+          <EntitySet Name="groups" EntityType="Euro2016BetsDeveloppementModel.groups" />
+          <EntitySet Name="groupsmatchschedule" EntityType="Euro2016BetsDeveloppementModel.groupsmatchschedule" />
+          <EntitySet Name="matchs" EntityType="Euro2016BetsDeveloppementModel.matchs" />
+          <EntitySet Name="matchsteam" EntityType="Euro2016BetsDeveloppementModel.matchsteam" />
+          <EntitySet Name="Parameters" EntityType="Euro2016BetsDeveloppementModel.Parameters" />
+          <EntitySet Name="phase" EntityType="Euro2016BetsDeveloppementModel.phase" />
+          <EntitySet Name="players" EntityType="Euro2016BetsDeveloppementModel.players" />
+          <EntitySet Name="scorer" EntityType="Euro2016BetsDeveloppementModel.scorer" />
+          <EntitySet Name="stadium" EntityType="Euro2016BetsDeveloppementModel.stadium" />
+          <EntitySet Name="team" EntityType="Euro2016BetsDeveloppementModel.team" />
+          <EntitySet Name="towns" EntityType="Euro2016BetsDeveloppementModel.towns" />
+          <EntitySet Name="Usr" EntityType="Euro2016BetsDeveloppementModel.Usr" />
+          <EntitySet Name="webpages_Membership" EntityType="Euro2016BetsDeveloppementModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Euro2016BetsDeveloppementModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="Euro2016BetsDeveloppementModel.webpages_Roles" />
+          <EntitySet Name="MatchsList" EntityType="Euro2016BetsDeveloppementModel.MatchsList" />
+          <EntitySet Name="UsrMatch" EntityType="Euro2016BetsDeveloppementModel.UsrMatch" />
+          <AssociationSet Name="Bet_Matchs_Fk" Association="Euro2016BetsDeveloppementModel.Bet_Matchs_Fk">
+            <End Role="matchs" EntitySet="matchs" />
+            <End Role="bet" EntitySet="bet" />
+          </AssociationSet>
+          <AssociationSet Name="Team_Country_Fk" Association="Euro2016BetsDeveloppementModel.Team_Country_Fk">
+            <End Role="country" EntitySet="country" />
+            <End Role="team" EntitySet="team" />
+          </AssociationSet>
+          <AssociationSet Name="Matchs_Phase_Fk" Association="Euro2016BetsDeveloppementModel.Matchs_Phase_Fk">
+            <End Role="phase" EntitySet="phase" />
+            <End Role="matchs" EntitySet="matchs" />
+          </AssociationSet>
+          <AssociationSet Name="Matchs_Stadium_Fk" Association="Euro2016BetsDeveloppementModel.Matchs_Stadium_Fk">
+            <End Role="stadium" EntitySet="stadium" />
+            <End Role="matchs" EntitySet="matchs" />
+          </AssociationSet>
+          <AssociationSet Name="MatchsTeam_Match_Fk" Association="Euro2016BetsDeveloppementModel.MatchsTeam_Match_Fk">
+            <End Role="matchs" EntitySet="matchs" />
+            <End Role="matchsteam" EntitySet="matchsteam" />
+          </AssociationSet>
+          <AssociationSet Name="MatchsTeam_Team_Fk" Association="Euro2016BetsDeveloppementModel.MatchsTeam_Team_Fk">
+            <End Role="team" EntitySet="team" />
+            <End Role="matchsteam" EntitySet="matchsteam" />
+          </AssociationSet>
+          <AssociationSet Name="Stadium_Towns_Fk" Association="Euro2016BetsDeveloppementModel.Stadium_Towns_Fk">
+            <End Role="towns" EntitySet="towns" />
+            <End Role="stadium" EntitySet="stadium" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="Euro2016BetsDeveloppementModel.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="Usr" EntitySet="Usr" />
+          </AssociationSet>
+          <FunctionImport Name="PostBet">
+            <Parameter Name="pMatchsIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pUsrIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pHomeAway" Mode="In" Type="String" />
+            <Parameter Name="pScore" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PostBetAway">
+            <Parameter Name="pMatchsIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pUsrIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pScore" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PostBetFull">
+            <Parameter Name="pMatchsIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pUsrName" Mode="In" Type="String" />
+            <Parameter Name="pScoreHome" Mode="In" Type="Int32" />
+            <Parameter Name="pScoreAway" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PostBetHome">
+            <Parameter Name="pMatchsIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pUsrIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pScore" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PostScore">
+            <Parameter Name="pMatchIdt" Mode="In" Type="Int32" />
+            <Parameter Name="pScoreHome" Mode="In" Type="Int32" />
+            <Parameter Name="pScoreAway" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="bet">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="HomeAway" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Score" Type="Int16" />
+          <Property Name="Matchs_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Usr_Idt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="matchs" Relationship="Euro2016BetsDeveloppementModel.Bet_Matchs_Fk" FromRole="bet" ToRole="matchs" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Lbl" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Flag" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="team" Relationship="Euro2016BetsDeveloppementModel.Team_Country_Fk" FromRole="country" ToRole="team" />
+        </EntityType>
+        <EntityType Name="groups">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Lbl" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="groupsmatchschedule">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MatchDay" Type="Int16" Nullable="false" />
+          <Property Name="NumOrderHome" Type="Int16" Nullable="false" />
+          <Property Name="NumOrderAway" Type="Int16" />
+        </EntityType>
+        <EntityType Name="matchs">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int16" />
+          <Property Name="Groups_Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Phase_Idt" Type="Int32" />
+          <Property Name="ScheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="Stadium_Idt" Type="Int32" />
+          <NavigationProperty Name="bet" Relationship="Euro2016BetsDeveloppementModel.Bet_Matchs_Fk" FromRole="matchs" ToRole="bet" />
+          <NavigationProperty Name="phase" Relationship="Euro2016BetsDeveloppementModel.Matchs_Phase_Fk" FromRole="matchs" ToRole="phase" />
+          <NavigationProperty Name="stadium" Relationship="Euro2016BetsDeveloppementModel.Matchs_Stadium_Fk" FromRole="matchs" ToRole="stadium" />
+          <NavigationProperty Name="matchsteam" Relationship="Euro2016BetsDeveloppementModel.MatchsTeam_Match_Fk" FromRole="matchs" ToRole="matchsteam" />
+        </EntityType>
+        <EntityType Name="matchsteam">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Matchs_Idt" Type="Int32" Nullable="false" />
+          <Property Name="AwayHome" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="team_idt" Type="Int32" />
+          <Property Name="Score" Type="Int16" />
+          <Property Name="Calc" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="matchs" Relationship="Euro2016BetsDeveloppementModel.MatchsTeam_Match_Fk" FromRole="matchsteam" ToRole="matchs" />
+          <NavigationProperty Name="team" Relationship="Euro2016BetsDeveloppementModel.MatchsTeam_Team_Fk" FromRole="matchsteam" ToRole="team" />
+        </EntityType>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Value" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="phase">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Lbl" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="matchs" Relationship="Euro2016BetsDeveloppementModel.Matchs_Phase_Fk" FromRole="phase" ToRole="matchs" />
+        </EntityType>
+        <EntityType Name="players">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Number" Type="Int16" />
+          <Property Name="Team_Idt" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="scorer">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Minute" Type="String" MaxLength="45" Unicode="true" FixedLength="false" />
+          <Property Name="Players_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Match_Idt" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stadium">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Towns_Idt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="matchs" Relationship="Euro2016BetsDeveloppementModel.Matchs_Stadium_Fk" FromRole="stadium" ToRole="matchs" />
+          <NavigationProperty Name="towns" Relationship="Euro2016BetsDeveloppementModel.Stadium_Towns_Fk" FromRole="stadium" ToRole="towns" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Lbl" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Country_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Groups_Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="NumOrder" Type="Int16" />
+          <NavigationProperty Name="country" Relationship="Euro2016BetsDeveloppementModel.Team_Country_Fk" FromRole="team" ToRole="country" />
+          <NavigationProperty Name="matchsteam" Relationship="Euro2016BetsDeveloppementModel.MatchsTeam_Team_Fk" FromRole="team" ToRole="matchsteam" />
+        </EntityType>
+        <EntityType Name="towns">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="stadium" Relationship="Euro2016BetsDeveloppementModel.Stadium_Towns_Fk" FromRole="towns" ToRole="stadium" />
+        </EntityType>
+        <EntityType Name="Usr">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="55" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" MaxLength="56" Unicode="true" FixedLength="false" />
+          <Property Name="eMail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="webpages_Roles" Relationship="Euro2016BetsDeveloppementModel.webpages_UsersInRoles" FromRole="Usr" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Usr" Relationship="Euro2016BetsDeveloppementModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="Usr" />
+        </EntityType>
+        <EntityType Name="MatchsList">
+          <Key>
+            <PropertyRef Name="Idt" />
+            <PropertyRef Name="Phase_Idt" />
+            <PropertyRef Name="Phase_Lbl" />
+            <PropertyRef Name="Stadium_Name" />
+            <PropertyRef Name="Town_Name" />
+          </Key>
+          <Property Name="Idt" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int16" />
+          <Property Name="Groups_Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="ScheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="Phase_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Phase_Lbl" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Stadium_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Town_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Team_Home" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Team_Home_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ImageHome" Type="String" MaxLength="117" Unicode="true" FixedLength="false" />
+          <Property Name="Score_Home" Type="Int16" />
+          <Property Name="Team_Away" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Team_Away_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ImageAway" Type="String" MaxLength="117" Unicode="true" FixedLength="false" />
+          <Property Name="Score_Away" Type="Int16" />
+        </EntityType>
+        <EntityType Name="UsrMatch">
+          <Key>
+            <PropertyRef Name="Matchs_Idt" />
+            <PropertyRef Name="Usr_Idt" />
+            <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="Idt" />
+            <PropertyRef Name="Finished" />
+            <PropertyRef Name="Phase_Idt" />
+            <PropertyRef Name="Phase_Lbl" />
+            <PropertyRef Name="Stadium_Name" />
+            <PropertyRef Name="Town_Name" />
+            <PropertyRef Name="MatchIsFullFilled" />
+          </Key>
+          <Property Name="Matchs_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Usr_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Usr_Name" Type="String" Nullable="false" MaxLength="55" Unicode="true" FixedLength="false" />
+          <Property Name="Bet_Idt_Home" Type="Int32" />
+          <Property Name="HomeScore" Type="Int16" />
+          <Property Name="Bet_Idt_Away" Type="Int32" />
+          <Property Name="AwayScore" Type="Int16" />
+          <Property Name="Idt" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int16" />
+          <Property Name="Groups_Cod" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="ScheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="Finished" Type="Int32" Nullable="false" />
+          <Property Name="Phase_Idt" Type="Int32" Nullable="false" />
+          <Property Name="Phase_Lbl" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Stadium_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Town_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Team_Home" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Team_Home_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ImageHome" Type="String" MaxLength="117" Unicode="true" FixedLength="false" />
+          <Property Name="Score_Home" Type="Int16" />
+          <Property Name="Team_Away" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Team_Away_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ImageAway" Type="String" MaxLength="117" Unicode="true" FixedLength="false" />
+          <Property Name="Score_Away" Type="Int16" />
+          <Property Name="MatchIsFullFilled" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="Bet_Matchs_Fk">
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.matchs" Multiplicity="1" />
+          <End Role="bet" Type="Euro2016BetsDeveloppementModel.bet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="matchs">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="bet">
+              <PropertyRef Name="Matchs_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Team_Country_Fk">
+          <End Role="country" Type="Euro2016BetsDeveloppementModel.country" Multiplicity="1" />
+          <End Role="team" Type="Euro2016BetsDeveloppementModel.team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="team">
+              <PropertyRef Name="Country_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Matchs_Phase_Fk">
+          <End Role="phase" Type="Euro2016BetsDeveloppementModel.phase" Multiplicity="0..1" />
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.matchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phase">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchs">
+              <PropertyRef Name="Phase_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Matchs_Stadium_Fk">
+          <End Role="stadium" Type="Euro2016BetsDeveloppementModel.stadium" Multiplicity="0..1" />
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.matchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stadium">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchs">
+              <PropertyRef Name="Stadium_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MatchsTeam_Match_Fk">
+          <End Role="matchs" Type="Euro2016BetsDeveloppementModel.matchs" Multiplicity="1" />
+          <End Role="matchsteam" Type="Euro2016BetsDeveloppementModel.matchsteam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="matchs">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchsteam">
+              <PropertyRef Name="Matchs_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MatchsTeam_Team_Fk">
+          <End Role="team" Type="Euro2016BetsDeveloppementModel.team" Multiplicity="0..1" />
+          <End Role="matchsteam" Type="Euro2016BetsDeveloppementModel.matchsteam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="team">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="matchsteam">
+              <PropertyRef Name="team_idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stadium_Towns_Fk">
+          <End Role="towns" Type="Euro2016BetsDeveloppementModel.towns" Multiplicity="1" />
+          <End Role="stadium" Type="Euro2016BetsDeveloppementModel.stadium" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="towns">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="stadium">
+              <PropertyRef Name="Towns_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="Euro2016BetsDeveloppementModel.webpages_Roles" Multiplicity="*" />
+          <End Role="Usr" Type="Euro2016BetsDeveloppementModel.Usr" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Euro2016BetsDeveloppementModelStoreContainer" CdmEntityContainer="Euro2016BetsDeveloppementEntities1">
+          <EntitySetMapping Name="bet">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.bet">
+              <MappingFragment StoreEntitySet="bet">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="HomeAway" ColumnName="HomeAway" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Matchs_Idt" ColumnName="Matchs_Idt" />
+                <ScalarProperty Name="Usr_Idt" ColumnName="Usr_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="country">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.country">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groups">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.groups">
+              <MappingFragment StoreEntitySet="groups">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groupsmatchschedule">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.groupsmatchschedule">
+              <MappingFragment StoreEntitySet="groupsmatchschedule">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="MatchDay" ColumnName="MatchDay" />
+                <ScalarProperty Name="NumOrderHome" ColumnName="NumOrderHome" />
+                <ScalarProperty Name="NumOrderAway" ColumnName="NumOrderAway" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="matchs">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.matchs">
+              <MappingFragment StoreEntitySet="matchs">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Groups_Cod" ColumnName="Groups_Cod" />
+                <ScalarProperty Name="Phase_Idt" ColumnName="Phase_Idt" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="Stadium_Idt" ColumnName="Stadium_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="matchsteam">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.matchsteam">
+              <MappingFragment StoreEntitySet="matchsteam">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Matchs_Idt" ColumnName="Matchs_Idt" />
+                <ScalarProperty Name="AwayHome" ColumnName="AwayHome" />
+                <ScalarProperty Name="team_idt" ColumnName="team_idt" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Calc" ColumnName="Calc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parameters">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.Parameters">
+              <MappingFragment StoreEntitySet="Parameters">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phase">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.phase">
+              <MappingFragment StoreEntitySet="phase">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="players">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.players">
+              <MappingFragment StoreEntitySet="players">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Team_Idt" ColumnName="Team_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="scorer">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.scorer">
+              <MappingFragment StoreEntitySet="scorer">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Minute" ColumnName="Minute" />
+                <ScalarProperty Name="Players_Idt" ColumnName="Players_Idt" />
+                <ScalarProperty Name="Match_Idt" ColumnName="Match_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stadium">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.stadium">
+              <MappingFragment StoreEntitySet="stadium">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Towns_Idt" ColumnName="Towns_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="team">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.team">
+              <MappingFragment StoreEntitySet="team">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+                <ScalarProperty Name="Country_Idt" ColumnName="Country_Idt" />
+                <ScalarProperty Name="Groups_Cod" ColumnName="Groups_Cod" />
+                <ScalarProperty Name="NumOrder" ColumnName="NumOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="towns">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.towns">
+              <MappingFragment StoreEntitySet="towns">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usr">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.Usr">
+              <MappingFragment StoreEntitySet="Usr">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MatchsList">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.MatchsList">
+              <MappingFragment StoreEntitySet="MatchsList">
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Groups_Cod" ColumnName="Groups_Cod" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="Phase_Idt" ColumnName="Phase_Idt" />
+                <ScalarProperty Name="Phase_Lbl" ColumnName="Phase_Lbl" />
+                <ScalarProperty Name="Stadium_Name" ColumnName="Stadium_Name" />
+                <ScalarProperty Name="Town_Name" ColumnName="Town_Name" />
+                <ScalarProperty Name="Team_Home" ColumnName="Team_Home" />
+                <ScalarProperty Name="Team_Home_Label" ColumnName="Team_Home_Label" />
+                <ScalarProperty Name="ImageHome" ColumnName="ImageHome" />
+                <ScalarProperty Name="Score_Home" ColumnName="Score_Home" />
+                <ScalarProperty Name="Team_Away" ColumnName="Team_Away" />
+                <ScalarProperty Name="Team_Away_Label" ColumnName="Team_Away_Label" />
+                <ScalarProperty Name="ImageAway" ColumnName="ImageAway" />
+                <ScalarProperty Name="Score_Away" ColumnName="Score_Away" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsrMatch">
+            <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.UsrMatch">
+              <MappingFragment StoreEntitySet="UsrMatch">
+                <ScalarProperty Name="Matchs_Idt" ColumnName="Matchs_Idt" />
+                <ScalarProperty Name="Usr_Idt" ColumnName="Usr_Idt" />
+                <ScalarProperty Name="Usr_Name" ColumnName="Usr_Name" />
+                <ScalarProperty Name="Bet_Idt_Home" ColumnName="Bet_Idt_Home" />
+                <ScalarProperty Name="HomeScore" ColumnName="HomeScore" />
+                <ScalarProperty Name="Bet_Idt_Away" ColumnName="Bet_Idt_Away" />
+                <ScalarProperty Name="AwayScore" ColumnName="AwayScore" />
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Groups_Cod" ColumnName="Groups_Cod" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="Finished" ColumnName="Finished" />
+                <ScalarProperty Name="Phase_Idt" ColumnName="Phase_Idt" />
+                <ScalarProperty Name="Phase_Lbl" ColumnName="Phase_Lbl" />
+                <ScalarProperty Name="Stadium_Name" ColumnName="Stadium_Name" />
+                <ScalarProperty Name="Town_Name" ColumnName="Town_Name" />
+                <ScalarProperty Name="Team_Home" ColumnName="Team_Home" />
+                <ScalarProperty Name="Team_Home_Label" ColumnName="Team_Home_Label" />
+                <ScalarProperty Name="ImageHome" ColumnName="ImageHome" />
+                <ScalarProperty Name="Score_Home" ColumnName="Score_Home" />
+                <ScalarProperty Name="Team_Away" ColumnName="Team_Away" />
+                <ScalarProperty Name="Team_Away_Label" ColumnName="Team_Away_Label" />
+                <ScalarProperty Name="ImageAway" ColumnName="ImageAway" />
+                <ScalarProperty Name="Score_Away" ColumnName="Score_Away" />
+                <ScalarProperty Name="MatchIsFullFilled" ColumnName="MatchIsFullFilled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="Euro2016BetsDeveloppementModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="Usr">
+              <ScalarProperty Name="Idt" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="PostBet" FunctionName="Euro2016BetsDeveloppementModel.Store.PostBet" />
+          <FunctionImportMapping FunctionImportName="PostBetAway" FunctionName="Euro2016BetsDeveloppementModel.Store.PostBetAway" />
+          <FunctionImportMapping FunctionImportName="PostBetFull" FunctionName="Euro2016BetsDeveloppementModel.Store.PostBetFull" />
+          <FunctionImportMapping FunctionImportName="PostBetHome" FunctionName="Euro2016BetsDeveloppementModel.Store.PostBetHome" />
+          <FunctionImportMapping FunctionImportName="PostScore" FunctionName="Euro2016BetsDeveloppementModel.Store.PostScore" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
