@@ -15,9 +15,12 @@ namespace Euro2016.Controllers
         //
         // GET: /UsrMatch/
 
-        public ActionResult Index()
+        public ActionResult Index(string pUserName)
         {
-            return View(db.UsrMatch.ToList());
+            var um = from s in db.UsrMatch
+                     where s.Usr_Name == "Alain"
+                     select s;
+            return View(um.ToList());
         }
 
         //
