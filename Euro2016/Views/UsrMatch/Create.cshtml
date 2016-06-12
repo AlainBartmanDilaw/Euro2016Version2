@@ -1,0 +1,228 @@
+﻿@model Euro2016.UsrMatch
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UsrMatch</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Matchs_Idt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Matchs_Idt)
+            @Html.ValidationMessageFor(model => model.Matchs_Idt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usr_Idt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usr_Idt)
+            @Html.ValidationMessageFor(model => model.Usr_Idt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usr_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usr_Name)
+            @Html.ValidationMessageFor(model => model.Usr_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bet_Idt_Home)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bet_Idt_Home)
+            @Html.ValidationMessageFor(model => model.Bet_Idt_Home)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeScore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeScore)
+            @Html.ValidationMessageFor(model => model.HomeScore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bet_Idt_Away)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bet_Idt_Away)
+            @Html.ValidationMessageFor(model => model.Bet_Idt_Away)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AwayScore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AwayScore)
+            @Html.ValidationMessageFor(model => model.AwayScore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Idt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Idt)
+            @Html.ValidationMessageFor(model => model.Idt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Number)
+            @Html.ValidationMessageFor(model => model.Number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Groups_Cod)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Groups_Cod)
+            @Html.ValidationMessageFor(model => model.Groups_Cod)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ScheduleDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ScheduleDate)
+            @Html.ValidationMessageFor(model => model.ScheduleDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Finished)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Finished)
+            @Html.ValidationMessageFor(model => model.Finished)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phase_Idt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phase_Idt)
+            @Html.ValidationMessageFor(model => model.Phase_Idt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phase_Lbl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phase_Lbl)
+            @Html.ValidationMessageFor(model => model.Phase_Lbl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Stadium_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Stadium_Name)
+            @Html.ValidationMessageFor(model => model.Stadium_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Town_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Town_Name)
+            @Html.ValidationMessageFor(model => model.Town_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team_Home)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Team_Home)
+            @Html.ValidationMessageFor(model => model.Team_Home)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team_Home_Label)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Team_Home_Label)
+            @Html.ValidationMessageFor(model => model.Team_Home_Label)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageHome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageHome)
+            @Html.ValidationMessageFor(model => model.ImageHome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Score_Home)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Score_Home)
+            @Html.ValidationMessageFor(model => model.Score_Home)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team_Away)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Team_Away)
+            @Html.ValidationMessageFor(model => model.Team_Away)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team_Away_Label)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Team_Away_Label)
+            @Html.ValidationMessageFor(model => model.Team_Away_Label)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageAway)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageAway)
+            @Html.ValidationMessageFor(model => model.ImageAway)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Score_Away)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Score_Away)
+            @Html.ValidationMessageFor(model => model.Score_Away)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MatchIsFullFilled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MatchIsFullFilled)
+            @Html.ValidationMessageFor(model => model.MatchIsFullFilled)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

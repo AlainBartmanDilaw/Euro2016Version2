@@ -1,0 +1,190 @@
+﻿@model Euro2016.UsrMatch
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UsrMatch</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Matchs_Idt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Matchs_Idt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usr_Idt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usr_Idt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usr_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usr_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bet_Idt_Home)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bet_Idt_Home)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomeScore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomeScore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bet_Idt_Away)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bet_Idt_Away)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AwayScore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AwayScore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Idt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Idt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Groups_Cod)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Groups_Cod)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ScheduleDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ScheduleDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Finished)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Finished)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phase_Idt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phase_Idt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phase_Lbl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phase_Lbl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stadium_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stadium_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Town_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Town_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team_Home)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team_Home)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team_Home_Label)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team_Home_Label)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageHome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageHome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Score_Home)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Score_Home)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team_Away)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team_Away)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team_Away_Label)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team_Away_Label)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageAway)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageAway)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Score_Away)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Score_Away)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MatchIsFullFilled)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MatchIsFullFilled)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsrMatchController.cs" />
     <Compile Include="country.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
@@ -392,6 +393,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\UsrMatch\Index.cshtml" />
+    <Content Include="Views\UsrMatch\Details.cshtml" />
+    <Content Include="Views\UsrMatch\Create.cshtml" />
+    <Content Include="Views\UsrMatch\Edit.cshtml" />
+    <Content Include="Views\UsrMatch\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

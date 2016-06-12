@@ -16,9 +16,9 @@ namespace Euro2016
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class Euro2016BetsDeveloppementEntities1 : DbContext
+    public partial class Euro2016BetsEntities : DbContext
     {
-        public Euro2016BetsDeveloppementEntities1()
+        public Euro2016BetsEntities()
             : base("name=Euro2016BetsDeveloppementEntities1")
         {
         }
