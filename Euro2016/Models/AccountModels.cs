@@ -86,6 +86,10 @@ namespace Euro2016.Models
         [Display(Name = "Confirmer le mot de passe ")]
         [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Adresse Mail")]
+        public string eMail { get; set; }
     }
 
     public class ExternalLogin

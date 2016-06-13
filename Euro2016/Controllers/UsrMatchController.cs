@@ -64,14 +64,17 @@ namespace Euro2016.Controllers
         //
         // GET: /UsrMatch/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(int pIdt, int pScoreHome, int pScoreAway)
         {
-            UsrMatch usrmatch = db.UsrMatch.Find(id);
-            if (usrmatch == null)
-            {
-                return HttpNotFound();
-            }
-            return View(usrmatch);
+            // UsrMatch usrmatch = db.UsrMatch.Find(pIdt);
+            //UsrMatch usrmatch = (UsrMatch)db.UsrMatch.Where(t => t.Idt == pIdt);
+            //if (usrmatch == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            db.PostBetFull(pIdt, User.Identity.Name, pScoreHome, pScoreAway);
+            return RedirectToAction("Index");
+            //return View(usrmatch);
         }
 
         //
@@ -108,9 +111,9 @@ namespace Euro2016.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int pidt)
         {
-            UsrMatch usrmatch = db.UsrMatch.Find(id);
+            UsrMatch usrmatch = db.UsrMatch.Find(pidt);
             db.UsrMatch.Remove(usrmatch);
             db.SaveChanges();
             return RedirectToAction("Index");

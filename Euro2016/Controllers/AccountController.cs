@@ -79,7 +79,7 @@ namespace Euro2016.Controllers
                 // Tentative d'inscription de l'utilisateur
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new { eMail = model.eMail }, requireConfirmationToken: false);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
@@ -263,14 +263,14 @@ namespace Euro2016.Controllers
             if (ModelState.IsValid)
             {
                 // Insérer un nouvel utilisateur dans la base de données
-                using (UsersContext db = new UsersContext())
+                using (Euro2016BetsEntities db = new Euro2016BetsEntities())
                 {
-                    UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+                    Usr user = db.Usr.FirstOrDefault(u => u.Name.ToLower() == model.UserName.ToLower());
                     // Vérifier si l'utilisateur n'existe pas déjà
                     if (user == null)
                     {
                         // Insérer le nom dans la table des profils
-                        db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+                        db.Usr.Add(new Usr { Name = model.UserName });
                         db.SaveChanges();
 
                         OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);

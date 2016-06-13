@@ -174,7 +174,7 @@
             @Html.DisplayFor(modelItem => item.MatchIsFullFilled)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Idt })
+            @Html.ActionLink("Edit", "Edit", new { pIdt=item.Idt, pScoreHome=item.Score_Home, pScoreAway=item.Score_Away })
         </td>
     </tr>
 }
