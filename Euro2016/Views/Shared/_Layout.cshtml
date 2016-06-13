@@ -3,7 +3,7 @@
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - Mon application ASP.NET MVC</title>
+        <title>@ViewBag.Title - Euro 2016 Bets</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -13,7 +13,10 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("votre logo ici", "Index", "Home")</p>
+                    <p class="site-title">
+                        @using Euro2016.Helpers;
+                        @Html.ImageActionLink("Link Display Text", "Index", "Home", null, null, "~/Images/UEFA_Euro_2016_logo.png")
+                    </p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -39,7 +42,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Mon application ASP.NET MVC</p>
+                    <p>&copy; @DateTime.Now.Year - Euro 2016 Bets</p>
                 </div>
             </div>
         </footer>

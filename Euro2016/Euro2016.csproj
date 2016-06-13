@@ -217,6 +217,7 @@
     <Compile Include="groupsmatchschedule.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AppHelpers.cs" />
     <Compile Include="matchs.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
@@ -340,6 +341,31 @@
       <DependentUpon>Euro2016.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\Flag\Albanie.png" />
+    <Content Include="Images\Flag\Allemagne.png" />
+    <Content Include="Images\Flag\Angleterre.png" />
+    <Content Include="Images\Flag\Autriche.png" />
+    <Content Include="Images\Flag\Belgique.png" />
+    <Content Include="Images\Flag\Croatie.png" />
+    <Content Include="Images\Flag\Espagne.png" />
+    <Content Include="Images\Flag\France.png" />
+    <Content Include="Images\Flag\Hongrie.png" />
+    <Content Include="Images\Flag\Irlande du Nord.png" />
+    <Content Include="Images\Flag\Irlande.png" />
+    <Content Include="Images\Flag\Islande.png" />
+    <Content Include="Images\Flag\Italie.png" />
+    <Content Include="Images\Flag\Pays de Galles.png" />
+    <Content Include="Images\Flag\Pologne.png" />
+    <Content Include="Images\Flag\Portugal.png" />
+    <Content Include="Images\Flag\Roumanie.png" />
+    <Content Include="Images\Flag\Russie.png" />
+    <Content Include="Images\Flag\République Tchèque.png" />
+    <Content Include="Images\Flag\Slovaquie.png" />
+    <Content Include="Images\Flag\Suisse.png" />
+    <Content Include="Images\Flag\Suède.png" />
+    <Content Include="Images\Flag\Turquie.png" />
+    <Content Include="Images\Flag\Ukraine.png" />
+    <Content Include="Images\UEFA_Euro_2016_logo.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
