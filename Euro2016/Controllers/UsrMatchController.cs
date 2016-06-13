@@ -18,7 +18,7 @@ namespace Euro2016.Controllers
         public ActionResult Index(string pUserName)
         {
             var um = from s in db.UsrMatch
-                     where s.Usr_Name == "Alain"
+                     where s.Usr_Name == User.Identity.Name
                      select s;
             return View(um.ToList());
         }
