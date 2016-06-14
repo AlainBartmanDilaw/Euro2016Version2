@@ -12,17 +12,31 @@ namespace Euro2016.Controllers
     {
         private Euro2016BetsEntities db = new Euro2016BetsEntities();
 
-        //
-        // GET: /UsrMatch/
+        ////
+        //// GET: /UsrMatch/
+        //public ActionResult Index(string pUserName)
+        //{
+        //    var um = from s in db.UsrMatch
+        //             where s.Usr_Name == User.Identity.Name
+        //             select s;
+        //    return View(um.ToList());
+        //}
 
-        public ActionResult Index(string pUserName)
+        [HttpGet]
+        public ActionResult Index()
         {
-            var um = from s in db.UsrMatch
-                     where s.Usr_Name == User.Identity.Name
-                     select s;
-            return View(um.ToList());
+            List<UsrMatch> model = new List<UsrMatch>();
+            model = db.UsrMatch.Where(a => a.Usr_Name == User.Identity.Name).OrderBy(a => a.Number).ToList();
+            return View(model);
         }
-
+        //[HttpGet]
+        //public ActionResult Index()
+        //{
+        //    List<UsrMatch> model = new List<UsrMatch>();
+        //    model = db.UsrMatch.Where(a => a.Usr_Name == User.Identity.Name).ToList();
+        //    return View(model);
+        //}
+        
         //
         // GET: /UsrMatch/Details/5
 
@@ -45,9 +59,59 @@ namespace Euro2016.Controllers
         }
 
         //
-        // POST: /UsrMatch/Create
+        // POST: /UsrMatch/Index
+
+        //[HttpPost]
+        //public ActionResult Index(List<Euro2016.UsrMatch> list)
+        //{
+
+        //    if (ModelState.IsValid)
+        //    {
+
+        //        foreach (var m in list)
+        //        {
+        //            UsrMatch x = db.UsrMatch.Where(a => a.Idt.Equals(m.Idt)).Single();
+        //            if (x != null)
+        //            {
+        //                db.PostBetFull(x.Idt, m.Usr_Name, m.HomeScore, m.AwayScore);
+        //            }
+        //        }
+        //        db.SaveChanges();
+
+        //        ViewBag.UpdateMessage = "Mise à jour effectée...";
+        //    }
+        //    return View(list);
+        //}
 
         [HttpPost]
+        public ActionResult Index(List<UsrMatch> list)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var i in list)
+                {
+                    var c = db.UsrMatch.Where(a => a.Idt.Equals(i.Idt) && a.Usr_Name == User.Identity.Name).Single();
+                    if (c != null)
+                    {
+                        db.PostBetFull(c.Idt, User.Identity.Name, i.HomeScore, i.AwayScore);
+                    }
+                    db.SaveChanges();
+                }
+                ViewBag.Message = "Successfully Updated.";
+                return Index();
+                //return View(list);
+            }
+            else
+            {
+                ViewBag.Message = "Failed ! Please try again.";
+                return View(list);
+            }
+        }
+        
+        //
+        // POST: /UsrMatch/Create
+
+        // [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(UsrMatch usrmatch)
         {
@@ -80,7 +144,7 @@ namespace Euro2016.Controllers
         //
         // POST: /UsrMatch/Edit/5
 
-        [HttpPost]
+        //[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UsrMatch usrmatch)
         {
