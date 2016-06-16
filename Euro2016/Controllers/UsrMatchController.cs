@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Euro2016.DatabaseEF;
 
 namespace Euro2016.Controllers
 {

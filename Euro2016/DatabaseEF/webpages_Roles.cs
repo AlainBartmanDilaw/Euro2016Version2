@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class phase
+    public partial class webpages_Roles
     {
-        public phase()
+        public webpages_Roles()
         {
-            this.matchs = new HashSet<matchs>();
+            this.Usr = new HashSet<Usr>();
         }
     
-        public int Idt { get; set; }
-        public string Lbl { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
     
-        public virtual ICollection<matchs> matchs { get; set; }
+        public virtual ICollection<Usr> Usr { get; set; }
     }
 }

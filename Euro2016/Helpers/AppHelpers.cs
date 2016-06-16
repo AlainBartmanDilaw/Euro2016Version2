@@ -34,6 +34,7 @@ namespace Euro2016.Helpers
             builder.MergeAttribute("height", height);
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
         }
+
     }
 }
 

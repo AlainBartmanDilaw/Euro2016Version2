@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Data.Entity;
@@ -19,7 +19,7 @@ namespace Euro2016
     public partial class Euro2016BetsEntities : DbContext
     {
         public Euro2016BetsEntities()
-            : base("name=Euro2016BetsDeveloppementEntities1")
+            : base("name=Euro2016BetsEntities")
         {
         }
     
@@ -47,6 +47,7 @@ namespace Euro2016
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<MatchsList> MatchsList { get; set; }
         public DbSet<UsrMatch> UsrMatch { get; set; }
+        public DbSet<UserMatchBets> UserMatchBets { get; set; }
     
         public virtual int PostBet(Nullable<int> pMatchsIdt, Nullable<int> pUsrIdt, string pHomeAway, Nullable<int> pScore)
         {

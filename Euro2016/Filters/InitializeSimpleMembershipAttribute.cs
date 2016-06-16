@@ -38,7 +38,7 @@ namespace Euro2016.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Usr", "Idt", "Name", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

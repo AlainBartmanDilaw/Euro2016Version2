@@ -1,4 +1,4 @@
-﻿http://www.dotnetodyssey.com/2015/03/24/getting-textbox-input-value-in-asp-net-mvc/html {
+﻿    http://www.dotnetodyssey.com/2015/03/24/getting-textbox-input-value-in-asp-net-mvc/html {
     background-color: #e2e2e2;
     margin: 0;
     padding: 0;
@@ -95,7 +95,7 @@ h5, h6 {
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1600px;
 }
 
 #body {
@@ -301,6 +301,14 @@ ol.round {
 
         ol.round li.nine {
             background: url("../Images/orderedList9.png") no-repeat;
+        }
+
+        ol.round tr.match
+        {
+            /*color: #FF00FF;*/
+            color: #0053ff;
+            table-layout: fixed;
+            empty-cells: show;
         }
 
 /* content */
@@ -766,3 +774,46 @@ tr.pager td {
             margin: 0;
         }
 }
+
+#content-editable, wtd.ScoreHomeBet, wtd.ScoreAwayBet
+{
+    -webkit-appearance: textfield;
+    background-color: white;
+    background-color: -moz-field;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;
+    font: -moz-field;
+    font: -webkit-small-control;
+    font-family: arial;
+    font-size: 18px;
+    line-height: 230%;
+    cursor: text;
+    text-indent: 1%;
+    border-radius: 3px;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -o-user-select: text;
+
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 10px;
+    height: 60px;
+    font-family: arial;
+    font-size: 18px;
+    line-height: 230%;
+    background-color: lightgrey;
+
+}
+
+[contenteditable='true']:before {
+    content: "\feff ";
+}
+
+
+td.ScoreAwayBet, td.ScoreHomeBet
+{
+    width: 2em;
+}
+

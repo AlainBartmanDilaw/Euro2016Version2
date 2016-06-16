@@ -7,23 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Usr
+    public partial class groupsmatchschedule
     {
-        public Usr()
-        {
-            this.webpages_Roles = new HashSet<webpages_Roles>();
-        }
-    
-        public int Idt { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string eMail { get; set; }
-    
-        public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
+        public short Idt { get; set; }
+        public short MatchDay { get; set; }
+        public short NumOrderHome { get; set; }
+        public Nullable<short> NumOrderAway { get; set; }
     }
 }

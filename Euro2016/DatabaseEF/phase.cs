@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class players
+    public partial class phase
     {
+        public phase()
+        {
+            this.matchs = new HashSet<matchs>();
+        }
+    
         public int Idt { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public Nullable<short> Number { get; set; }
-        public int Team_Idt { get; set; }
+        public string Lbl { get; set; }
+    
+        public virtual ICollection<matchs> matchs { get; set; }
     }
 }

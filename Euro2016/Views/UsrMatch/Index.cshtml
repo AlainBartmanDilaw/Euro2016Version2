@@ -1,6 +1,6 @@
 ﻿@using Euro2016.Helpers;
 
-@model List<Euro2016.UsrMatch>
+@model List<Euro2016.DatabaseEF.UsrMatch>
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
 
 <h2>Index</h2>
 
-@using (@Html.BeginForm("Index","UsrMatch", FormMethod.Post))
+@using (@Html.BeginForm("Index", "UsrMatch", FormMethod.Post))
 {
     
 <p><input type="submit" value="Sauvegarder" /></p>
@@ -29,13 +29,13 @@
         <th></th>
         <th></th>
     </tr>
-    @for( int i=0; i<Model.Count; i++)
+    @for (int i = 0; i < Model.Count; i++)
     {
-        if(Model[i].Finished == 1) // Le match n'est plus disponible à la saisie car au delà de l'heure.
+        if (Model[i].Finished == 1) // Le match n'est plus disponible à la saisie car au delà de l'heure.
         {
         <tr>               
             <td>@Html.HiddenFor(model => model[i].Idt)</td>
-            <td class="Number">@Html.DisplayFor(model=> model[i].Number)</td>
+            <td class="Number">@Html.DisplayFor(model => model[i].Number)</td>
             <td>@Html.DisplayFor(model => model[i].Groups_Cod)</td>
             <td>@Html.DisplayFor(model => model[i].ScheduleDate)</td>
             <td>@Html.DisplayFor(model => model[i].Phase_Lbl)</td>
@@ -53,7 +53,7 @@
         {
         <tr>               
             <td>@Html.HiddenFor(model => model[i].Idt)</td>
-            <td class="Number">@Html.DisplayFor(model=> model[i].Number)</td>
+            <td class="Number">@Html.DisplayFor(model => model[i].Number)</td>
             <td>@Html.DisplayFor(model => model[i].Groups_Cod)</td>
             <td>@Html.DisplayFor(model => model[i].ScheduleDate)</td>
             <td>@Html.DisplayFor(model => model[i].Phase_Lbl)</td>
@@ -61,8 +61,8 @@
             <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
             <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>
-            <td>@Html.EditorFor(model => model[i].HomeScore)</td>
-            <td>@Html.EditorFor(model => model[i].AwayScore)</td>
+            <td class="ScoreHomeBet">@Html.TextAreaFor(model => model[i].HomeScore)</td>
+            <td class="ScoreAwayBet">@Html.TextAreaFor(model => model[i].AwayScore, new { @class = "ScoreAwayBet" })</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageAway, "25")</td>
             <td>@Html.DisplayFor(model => model[i].Team_Away_Label)</td>
         </tr>

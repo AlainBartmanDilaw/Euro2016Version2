@@ -183,26 +183,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="bet.cs">
+    <Compile Include="DatabaseEF\bet.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsrMatchController.cs" />
-    <Compile Include="country.cs">
+    <Compile Include="DatabaseEF\country.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="Euro2016.Context.cs">
+    <Compile Include="DatabaseEF\Euro2016.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Euro2016.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Euro2016.cs">
+    <Compile Include="DatabaseEF\Euro2016.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="Euro2016.Designer.cs">
+    <Compile Include="DatabaseEF\Euro2016.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Euro2016.edmx</DependentUpon>
@@ -211,58 +211,61 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="groups.cs">
+    <Compile Include="DatabaseEF\groups.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="groupsmatchschedule.cs">
+    <Compile Include="DatabaseEF\groupsmatchschedule.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppHelpers.cs" />
-    <Compile Include="matchs.cs">
+    <Compile Include="DatabaseEF\matchs.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="MatchsList.cs">
+    <Compile Include="DatabaseEF\MatchsList.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="matchsteam.cs">
+    <Compile Include="DatabaseEF\matchsteam.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Parameters.cs">
+    <Compile Include="DatabaseEF\Parameters.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="phase.cs">
+    <Compile Include="DatabaseEF\phase.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="players.cs">
+    <Compile Include="DatabaseEF\players.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="scorer.cs">
+    <Compile Include="DatabaseEF\scorer.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="stadium.cs">
+    <Compile Include="DatabaseEF\stadium.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="team.cs">
+    <Compile Include="DatabaseEF\team.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="towns.cs">
+    <Compile Include="DatabaseEF\towns.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="Usr.cs">
+    <Compile Include="DatabaseEF\UserMatchBets.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="UsrMatch.cs">
+    <Compile Include="DatabaseEF\Usr.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="webpages_Membership.cs">
+    <Compile Include="DatabaseEF\UsrMatch.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="webpages_OAuthMembership.cs">
+    <Compile Include="DatabaseEF\webpages_Membership.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
-    <Compile Include="webpages_Roles.cs">
+    <Compile Include="DatabaseEF\webpages_OAuthMembership.cs">
+      <DependentUpon>Euro2016.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseEF\webpages_Roles.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -321,23 +324,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Euro2016.Context.tt">
+    <Content Include="DatabaseEF\Euro2016.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Euro2016.edmx</DependentUpon>
       <LastGenOutput>Euro2016.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Euro2016.tt">
+    <Content Include="DatabaseEF\Euro2016.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Euro2016.edmx</DependentUpon>
       <LastGenOutput>Euro2016.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Euro2016.edmx">
+    <EntityDeploy Include="DatabaseEF\Euro2016.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Euro2016.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Euro2016.edmx.diagram">
+    <Content Include="DatabaseEF\Euro2016.edmx.diagram">
       <DependentUpon>Euro2016.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
@@ -380,7 +383,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

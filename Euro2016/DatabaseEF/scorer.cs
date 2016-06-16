@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class webpages_OAuthMembership
+    public partial class scorer
     {
-        public string Provider { get; set; }
-        public string ProviderUserId { get; set; }
-        public int UserId { get; set; }
+        public int Idt { get; set; }
+        public string Minute { get; set; }
+        public int Players_Idt { get; set; }
+        public int Match_Idt { get; set; }
     }
 }

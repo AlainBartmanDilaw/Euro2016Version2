@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.DatabaseEF
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
     
     public partial class UsrMatch
     {
@@ -18,9 +20,14 @@ namespace Euro2016
         public int Usr_Idt { get; set; }
         public string Usr_Name { get; set; }
         public Nullable<int> Bet_Idt_Home { get; set; }
+
+        [MaxLength(2)]
         public Nullable<short> HomeScore { get; set; }
-        public Nullable<int> Bet_Idt_Away { get; set; }
+        [MaxLength(2)]
         public Nullable<short> AwayScore { get; set; }
+
+        public Nullable<int> Bet_Idt_Away { get; set; }
+
         public int Idt { get; set; }
         public Nullable<short> Number { get; set; }
         public string Groups_Cod { get; set; }

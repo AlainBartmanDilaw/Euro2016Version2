@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using Euro2016.Filters;
 using Euro2016.Models;
+using Euro2016.DatabaseEF;
 
 namespace Euro2016.Controllers
 {

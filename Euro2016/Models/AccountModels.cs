@@ -11,20 +11,21 @@ namespace Euro2016.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("Euro2016BetsEntities")
         {
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UsrCnx> Users { get; set; }
     }
 
-    [Table("UserProfile")]
-    public class UserProfile
+    [Table("Usr")]
+    public class UsrCnx
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-        public string UserName { get; set; }
+        public int Idt { get; set; }
+        public string Name { get; set; }
+        public string eMail { get; set; }
     }
 
     public class RegisterExternalLoginModel
