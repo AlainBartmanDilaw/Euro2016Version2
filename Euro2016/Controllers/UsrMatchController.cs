@@ -91,7 +91,7 @@ namespace Euro2016.Controllers
                 foreach (var i in list)
                 {
                     var c = db.UsrMatch.Where(a => a.Idt.Equals(i.Idt) && a.Usr_Name == User.Identity.Name).Single();
-                    if (c != null)
+                    if (c != null && c.Finished == 0)
                     {
                         db.PostBetFull(c.Idt, User.Identity.Name, i.HomeScore, i.AwayScore);
                     }
