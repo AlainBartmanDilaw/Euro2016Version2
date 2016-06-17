@@ -5,33 +5,33 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1a4996432f9343b18533c876394e3e2e" Name="Diagramme1">
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.bet" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.country" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.groups" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.groupsmatchschedule" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.matchs" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.matchsteam" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.Parameters" Width="1.5" PointX="10.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.phase" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.players" Width="1.5" PointX="10.75" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.scorer" Width="1.5" PointX="5.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.stadium" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.team" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.towns" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.Usr" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.webpages_Membership" Width="1.5" PointX="7.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.webpages_OAuthMembership" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.MatchsList" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Euro2016BetsDeveloppementModel.UsrMatch" Width="1.5" PointX="12.75" PointY="9.5" IsExpanded="true" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.Bet_Matchs_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.Team_Country_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.Matchs_Phase_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.Matchs_Stadium_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.MatchsTeam_Match_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.MatchsTeam_Team_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.Stadium_Towns_Fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Euro2016BetsDeveloppementModel.webpages_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.bet" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.country" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.groups" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.groupsmatchschedule" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.matchs" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.matchsteam" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.Parameters" Width="1.5" PointX="10.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.phase" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.players" Width="1.5" PointX="10.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.scorer" Width="1.5" PointX="5.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.stadium" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.team" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.towns" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.Usr" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.webpages_Membership" Width="1.5" PointX="7.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.webpages_OAuthMembership" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.MatchsList" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UsrMatch" Width="1.5" PointX="12.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="Euro2016BetsModel.Bet_Matchs_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.Team_Country_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.Matchs_Phase_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.Matchs_Stadium_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.MatchsTeam_Match_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.MatchsTeam_Team_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.Stadium_Towns_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Euro2016BetsModel.webpages_UsersInRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
