@@ -491,7 +491,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Euro2016BetsDeveloppementModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Euro2016BetsDeveloppementEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="Euro2016BetsDeveloppementEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="bet" EntityType="Euro2016BetsDeveloppementModel.bet" />
           <EntitySet Name="country" EntityType="Euro2016BetsDeveloppementModel.country" />
           <EntitySet Name="groups" EntityType="Euro2016BetsDeveloppementModel.groups" />
@@ -902,7 +902,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Euro2016BetsDeveloppementModelStoreContainer" CdmEntityContainer="Euro2016BetsDeveloppementEntities1">
+        <EntityContainerMapping StorageEntityContainer="Euro2016BetsDeveloppementModelStoreContainer" CdmEntityContainer="Euro2016BetsDeveloppementEntities">
           <EntitySetMapping Name="bet">
             <EntityTypeMapping TypeName="Euro2016BetsDeveloppementModel.bet">
               <MappingFragment StoreEntitySet="bet">

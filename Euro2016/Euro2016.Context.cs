@@ -19,7 +19,7 @@ namespace Euro2016
     public partial class Euro2016BetsEntities : DbContext
     {
         public Euro2016BetsEntities()
-            : base("name=Euro2016BetsDeveloppementEntities1")
+            : base("name=Euro2016BetsDeveloppementEntities")
         {
         }
     
