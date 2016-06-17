@@ -97,13 +97,13 @@ namespace Euro2016.Controllers
                     }
                     db.SaveChanges();
                 }
-                ViewBag.Message = "Successfully Updated.";
+                ViewBag.Message = "Mise à jour effectuée...";
                 return Index();
                 //return View(list);
             }
             else
             {
-                ViewBag.Message = "Failed ! Please try again.";
+                ViewBag.Message = "Anomalie de mise à jour ! Essayez de nouveau.";
                 return View(list);
             }
         }
