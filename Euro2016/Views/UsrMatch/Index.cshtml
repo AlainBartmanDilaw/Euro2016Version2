@@ -61,8 +61,8 @@
             <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
             <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>
-            <td class="ScoreHomeBet">@Html.TextAreaFor(model => model[i].HomeScore)</td>
-            <td class="ScoreAwayBet">@Html.TextAreaFor(model => model[i].AwayScore, new { @class = "ScoreAwayBet" })</td>
+            <td >@Html.EditorFor(model => model[i].HomeScore)</td> <!--, new { class ="ScoreHomeBet"})</td> -->
+            <td >@Html.EditorFor(model => model[i].AwayScore)</td> <!--, new { class ="ScoreAwayBet"})</td> -->
             <td class="ImageHome">@Html.Image(Model[i].ImageAway, "25")</td>
             <td>@Html.DisplayFor(model => model[i].Team_Away_Label)</td>
         </tr>
