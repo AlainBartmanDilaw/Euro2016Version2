@@ -281,7 +281,7 @@
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
-      Avertissement 6002: La table/vue « Euro2016BetsDeveloppement.dbo.MatchsList » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      Avertissement 6002: La table/vue « Euro2016Bets.dbo.MatchsList » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
       -->
         <EntityType Name="MatchsList">
           <Key>
@@ -309,7 +309,7 @@
           <Property Name="Score_Away" Type="smallint" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
-      Avertissement 6002: La table/vue « Euro2016BetsDeveloppement.dbo.UsrMatch » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      Avertissement 6002: La table/vue « Euro2016Bets.dbo.UsrMatch » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
       -->
         <EntityType Name="UsrMatch">
           <Key>
