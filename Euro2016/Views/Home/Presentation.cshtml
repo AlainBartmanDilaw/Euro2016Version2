@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Presentation";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+<html>
+    <head>
+        <title>Présentation des paris entre amis / matchs de l'Euro 2016...</title>
+    </head>
+    <body>
+        <h1>Principe de base</h1>
+        <p>Le but de ce site est de s'amuser entre amis / en famille en pariant sur les résultats de l'Euro 2016</p>
+        <p>Il existe 2 types de pari :</p>
+            <h2>Paris avant la compétition</h2>
+            <p>Ici, il s'agit de parier sur les résultats finaux de l'Euro :</p>
+            <h3> 1/ Qui gagnera le Championnat d'Europe 2016 ?</h3>
+            <h3> 2/ Qui sera Finaliste vaincu ?</h3>
+            <h3> 3/ Qui sortira vainqueur de chacun des groupes A à F</h3>
+            <h3> 4/ Qui marquera le plus grand nombre de buts (meilleure attaque) ?</h3>
+            <h3> 5/ Qui encaissera le plus petit nombre de buts (meilleure défense) ?</h3>
+            <h3> Les Paris 4 et 5 seront calculés sur les 4 dernières équipes (les 4 demis-finalistes)</h3>
+            <h2>Paris pendant la compétition</h2>
+            <p>Pour ces paris, il suffit de parier sur le résultat attendu de chacun des matches, 1/4 d'heure avant que celui ci ne commence.</p>
+        <h1>Décompte des points</h1>
+        <h3>Pari Incorrect  :  1 point. (ceci pour donner un bénéfice par rapport à celui qui aurait oublié de poster son pari)... Exemple un pari = (2 : 1) pour un résultat de (1 : 2)</h3>
+        <h3>Tendance        :  5 points (2 : 1 pour 3 : 1)</h3>
+        <h3>Différence      :  9 points (2 : 1 pour 4 : 3)</h3>
+        <h3>Exact           : 20 points (2 : 1 pour 2 : 1)</h3>
+        <h3>Cas particulier : En cas de match nul bien pronostiqué, on prend le nombre point de la différence de buts (i.e 9 points). (1 : 1 pour 2 : 2)</h3>
+        <p>Lors des phases à élimination directe, on gardera le résultat en fin de prolongation (on peut donc avoir un match nul !)</p>
+        <h3>Bonus Score :</h3>
+        <p>+2 points si le nombre de buts de l'équipe "domicile" est correct.</p>
+        <p>+2 points si le nombre de buts de l'équipe "extérieure" est correct.</p>
+        <p>Ainsi, même avec un résultat incorrect, on pourra grappiller des points.</p>
+        <p>Par exemple, si le résultat est 2 : 1 et que le pari était à 0 : 1, on gagne quand même 2 points pour bon score "extérieur".</p>
+        <p>Ceci fait qu'un pari "Exact" permet de gagner 24 points ! 20 + 2 + 2 !</p>
+        <h2>Questions Bonus</h2>
+        <p>Attribués en fin de championnat, ces points peuvent bouleverser le classement déjà établi.</p>
+            <h3>Qui gagnera le Championnat d'Europe 2016 ?                          50 points</h3>
+            <h3>Qui sera Finaliste vaincu ?                                         37 points</h3>
+            <h3>Qui sortira vainqueur de chacun des groupes A à F                   22 points</h3>
+            <h3>Qui marquera le plus grand nombre de buts (meilleure attaque) ?     11 points</h3>
+            <h3>Qui encaissera le plus petit nombre de buts (meilleure défense) ?   11 points</h3>
+    </body>
+</html>

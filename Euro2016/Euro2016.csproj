@@ -424,6 +424,7 @@
     <Content Include="Views\UsrMatch\Create.cshtml" />
     <Content Include="Views\UsrMatch\Edit.cshtml" />
     <Content Include="Views\UsrMatch\Delete.cshtml" />
+    <Content Include="Views\Home\Presentation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
