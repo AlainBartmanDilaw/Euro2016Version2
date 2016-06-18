@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class players
+    public partial class webpages_Roles
     {
-        public int Idt { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public Nullable<short> Number { get; set; }
-        public int Team_Idt { get; set; }
+        public webpages_Roles()
+        {
+            this.Usr = new HashSet<Usr>();
+        }
+    
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
+    
+        public virtual ICollection<Usr> Usr { get; set; }
     }
 }

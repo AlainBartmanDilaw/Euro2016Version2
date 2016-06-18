@@ -7,21 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class phase
+    public partial class groupsmatchschedule
     {
-        public phase()
-        {
-            this.matchs = new HashSet<matchs>();
-        }
-    
-        public int Idt { get; set; }
-        public string Lbl { get; set; }
-    
-        public virtual ICollection<matchs> matchs { get; set; }
+        public short Idt { get; set; }
+        public short MatchDay { get; set; }
+        public short NumOrderHome { get; set; }
+        public Nullable<short> NumOrderAway { get; set; }
     }
 }

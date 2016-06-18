@@ -7,23 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class country
+    public partial class matchsteam
     {
-        public country()
-        {
-            this.team = new HashSet<team>();
-        }
-    
         public int Idt { get; set; }
-        public string Cod { get; set; }
-        public string Lbl { get; set; }
-        public byte[] Flag { get; set; }
+        public int Matchs_Idt { get; set; }
+        public string AwayHome { get; set; }
+        public Nullable<int> team_idt { get; set; }
+        public Nullable<short> Score { get; set; }
+        public string Calc { get; set; }
     
-        public virtual ICollection<team> team { get; set; }
+        public virtual matchs matchs { get; set; }
+        public virtual team team { get; set; }
     }
 }

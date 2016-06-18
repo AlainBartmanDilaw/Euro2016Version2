@@ -7,14 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Euro2016
+namespace Euro2016.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Parameters
+    public partial class bet
     {
-        public string Name { get; set; }
-        public string Value { get; set; }
+        public int Idt { get; set; }
+        public string HomeAway { get; set; }
+        public Nullable<short> Score { get; set; }
+        public int Matchs_Idt { get; set; }
+        public int Usr_Idt { get; set; }
+    
+        public virtual matchs matchs { get; set; }
     }
 }
