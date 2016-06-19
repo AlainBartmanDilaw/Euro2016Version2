@@ -183,6 +183,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ResultatsController.cs" />
     <Compile Include="EntityFramework\bet.cs">
       <DependentUpon>Euro2016.tt</DependentUpon>
     </Compile>
@@ -340,6 +341,7 @@
     <Content Include="EntityFramework\Euro2016.edmx.diagram">
       <DependentUpon>Euro2016.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FootballBets.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\Flag\Albanie.png" />
     <Content Include="Images\Flag\Allemagne.png" />
@@ -425,6 +427,7 @@
     <Content Include="Views\UsrMatch\Edit.cshtml" />
     <Content Include="Views\UsrMatch\Delete.cshtml" />
     <Content Include="Views\Home\Presentation.cshtml" />
+    <Content Include="Views\Resultats\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

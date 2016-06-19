@@ -26,6 +26,7 @@
                 @Html.LabelFor(m => m.Password)
                 @Html.PasswordFor(m => m.Password)
                 @Html.ValidationMessageFor(m => m.Password)
+                <p>@Html.ActionLink("Cliquez ici", "ForgotPassword") si vous avez perdu votre mot de passe.
             </li>
             <li>
                 @Html.CheckBoxFor(m => m.RememberMe)

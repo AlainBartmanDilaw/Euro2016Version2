@@ -9,9 +9,9 @@ namespace Euro2016.Helpers
 {
     public static class CustomHtmlHelpers
     {
-        public static IHtmlString ImageActionLink(this HtmlHelper htmlHelper,
-        string linkText, string action, string controller,
-        object routeValues, object htmlAttributes, string imageSrc)
+        public static IHtmlString ImageActionLink(this HtmlHelper htmlHelper
+            , string linkText, string action, string controller
+            , object routeValues, object htmlAttributes, string imageSrc)
         {
             var urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
             var img = new TagBuilder("img");
@@ -35,5 +35,9 @@ namespace Euro2016.Helpers
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
         }
     }
+
+    //public static class TextBoxFor : Html.TextBoxFor
+    //{
+    //}
 }
 

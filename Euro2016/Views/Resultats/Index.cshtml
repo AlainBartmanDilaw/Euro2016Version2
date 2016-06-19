@@ -1,0 +1,66 @@
+﻿@using Euro2016.Helpers;
+@using Euro2016.EntityFramework
+
+@model List<MatchsList>
+
+@{
+    ViewBag.Title = "Resultats";
+}
+
+<h2>Resultats</h2>
+
+@using (@Html.BeginForm("Index", "Resultats", FormMethod.Post))
+{
+<html>
+    <head>
+        <title>Liste des matches</title>
+    </head>
+    <body>
+        <table class="round" style="width: 100%">
+            <thead>
+                <tr>
+                    <th style="display:none;">Idt</th>
+                    <th style="text-align:center">N°</th>
+                    <th>Groupe</th>
+                    <th style="text-align:center">Date</th>
+                    <th>Phase</th>
+                    <th>Stade</th>
+                    <th>Ville</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for( int i=0; i<Model.Count; i++)
+                {
+                <tr class="match">
+                    <td >@Html.HiddenFor(model => model[i].Idt)</td>
+                    <td class="Number">@Html.DisplayFor(model=> model[i].Number)</td>
+                    <td>@Html.DisplayFor(model => model[i].Groups_Cod)</td>
+                    <td>@Html.DisplayFor(model => model[i].ScheduleDate)</td>
+                    <td>@Html.DisplayFor(model => model[i].Phase_Lbl)</td>
+                    <td>@Html.DisplayFor(model => model[i].Stadium_Name)</td>
+                    <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
+                    <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
+                    <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>
+                    <td>@Html.DisplayFor(model => model[i].Score_Home)</td>
+                    <td>@Html.DisplayFor(model => model[i].Score_Away)</td>
+                    <td class="ImageHome">@Html.Image(Model[i].ImageAway, "25")</td>
+                    <td>@Html.DisplayFor(model => model[i].Team_Away_Label)</td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

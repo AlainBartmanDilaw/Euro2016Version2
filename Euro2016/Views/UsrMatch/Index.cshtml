@@ -1,6 +1,7 @@
 ﻿@using Euro2016.Helpers;
+@using Euro2016.EntityFramework;
 
-@model List<Euro2016.EntityFramework.UsrMatch>
+@model List<UsrMatch>
 
 @{
     ViewBag.Title = "Index";
@@ -43,8 +44,8 @@
             <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
             <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>
-            <td>@Html.DisplayFor(model => model[i].HomeScore)</td>
-            <td>@Html.DisplayFor(model => model[i].AwayScore)</td>
+            <td class="ScoreHome">@Html.DisplayFor(model => model[i].HomeScore)</td>
+            <td class="ScoreAway">@Html.DisplayFor(model => model[i].AwayScore)</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageAway, "25")</td>
             <td>@Html.DisplayFor(model => model[i].Team_Away_Label)</td>
         </tr>
@@ -61,8 +62,8 @@
             <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
             <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>
-            <td>@Html.EditorFor(model => model[i].HomeScore)</td>
-            <td>@Html.EditorFor(model => model[i].AwayScore)</td>
+            <td class="td.ScoreHomeBet">@Html.TextBoxFor(model => model[i].HomeScore, new { @class="td.ScoreHomeBet", style = "width: 40px;text-align: center;background-color: lightgrey;", maxlength="2", size="2" })</td>
+            <td class="td.ScoreAwayBet">@Html.TextBoxFor(model => model[i].AwayScore, new { @class="td.ScoreAwayBet", style = "width: 40px;text-align: center;background-color: lightgrey;", maxlength="2", size="2" })</td>
             <td class="ImageHome">@Html.Image(Model[i].ImageAway, "25")</td>
             <td>@Html.DisplayFor(model => model[i].Team_Away_Label)</td>
         </tr>
