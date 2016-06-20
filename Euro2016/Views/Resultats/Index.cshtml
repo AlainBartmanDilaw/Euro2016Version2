@@ -40,10 +40,10 @@
                 <tr class="match">
                     <td >@Html.HiddenFor(model => model[i].Idt)</td>
                     <td class="Number">@Html.DisplayFor(model=> model[i].Number)</td>
-                    <td>@Html.DisplayFor(model => model[i].Groups_Cod)</td>
-                    <td>@Html.DisplayFor(model => model[i].ScheduleDate)</td>
-                    <td>@Html.DisplayFor(model => model[i].Phase_Lbl)</td>
-                    <td>@Html.DisplayFor(model => model[i].Stadium_Name)</td>
+                    <td class="Groups">@Html.DisplayFor(model => model[i].Groups_Cod)</td>
+                    <td class="Date">@Html.DisplayFor(model => model[i].ScheduleDate)</td>
+                    <td class="Phase">@Html.DisplayFor(model => model[i].Phase_Lbl)</td>
+                    <td class="Stade">@Html.DisplayFor(model => model[i].Stadium_Name)</td>
                     <td>@Html.DisplayFor(model => model[i].Town_Name)</td>
                     <td>@Html.DisplayFor(model => model[i].Team_Home_Label)</td>
                     <td class="ImageHome">@Html.Image(Model[i].ImageHome, "25")</td>

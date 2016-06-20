@@ -767,6 +767,21 @@ tr.pager td {
         }
 }
 
+td
+{
+    text-align: left;
+    color: #575757;
+    font-family: 'Baskerville Old Face';
+    font-size:large;
+    padding-left: 0px;
+    padding-right: 0px;
+    column-width: auto;
+    /*vertical-align: central;*/
+    grid-column-align: center;
+    vertical-align: middle;
+}
+
+
     td.ScoreHome, td.ScoreHomeBet
     {
         text-align: center;
@@ -794,5 +809,33 @@ tr.pager td {
     {
         text-align: left;
         padding-left:10px;
+    }
+
+    td.Groups
+    {
+        text-align: center;
+    }
+
+    td.Date
+    {
+        text-align: center;
+        /*column-width: 250px;*/
+        /*vertical-align:central;*/
+        grid-column-align: center;
+        vertical-align: middle;
+        /*grid-column-sizing:400px;*/   
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    td.Phase
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    td.Stade
+    {
+        padding-left: 10px;
     }
 
