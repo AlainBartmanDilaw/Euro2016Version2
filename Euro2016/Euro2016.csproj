@@ -341,6 +341,7 @@
     <Content Include="EntityFramework\Euro2016.edmx.diagram">
       <DependentUpon>Euro2016.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Ben.pubxml" />
     <None Include="Properties\PublishProfiles\FootballBets.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\Flag\Albanie.png" />
