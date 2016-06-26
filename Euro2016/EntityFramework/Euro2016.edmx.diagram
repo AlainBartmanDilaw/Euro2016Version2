@@ -32,6 +32,9 @@
         <AssociationConnector Association="Euro2016BetsModel.MatchsTeam_Team_Fk" ManuallyRouted="false" />
         <AssociationConnector Association="Euro2016BetsModel.Stadium_Towns_Fk" ManuallyRouted="false" />
         <AssociationConnector Association="Euro2016BetsModel.webpages_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserMatchBets" Width="1.5" PointX="1.486280630103443" PointY="4.1958888192641961" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserPoints" Width="1.5" PointX="4.7845110375362037" PointY="2.5765821349698035" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserStandings" Width="1.5" PointX="7.1098867278126479" PointY="26.052922260972171" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

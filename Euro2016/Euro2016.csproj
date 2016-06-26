@@ -208,6 +208,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Euro2016.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\UserMatchBets.cs">
+      <DependentUpon>Euro2016.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserPoints.cs">
+      <DependentUpon>Euro2016.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserStandings.cs">
+      <DependentUpon>Euro2016.tt</DependentUpon>
+    </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

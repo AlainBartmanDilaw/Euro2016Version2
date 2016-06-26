@@ -94,7 +94,7 @@ namespace Euro2016.Controllers
                     var c = db.UsrMatch.Where(a => a.Idt.Equals(i.Idt) && a.Usr_Name == User.Identity.Name).Single();
                     if (c != null && c.Finished == 0)
                     {
-                        db.PostBetFull(c.Idt, User.Identity.Name, i.HomeScore, i.AwayScore);
+                        db.PostBetFull(c.Idt, User.Identity.Name, i.HomeScore, i.AwayScore, "0");
                     }
                     db.SaveChanges();
                 }
@@ -137,7 +137,7 @@ namespace Euro2016.Controllers
             //{
             //    return HttpNotFound();
             //}
-            db.PostBetFull(pIdt, User.Identity.Name, pScoreHome, pScoreAway);
+            db.PostBetFull(pIdt, User.Identity.Name, pScoreHome, pScoreAway, "0");
             return RedirectToAction("Index");
             //return View(usrmatch);
         }

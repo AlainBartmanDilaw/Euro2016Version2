@@ -47,6 +47,9 @@ namespace Euro2016.EntityFramework
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<MatchsList> MatchsList { get; set; }
         public DbSet<UsrMatch> UsrMatch { get; set; }
+        public DbSet<UserMatchBets> UserMatchBets { get; set; }
+        public DbSet<UserPoints> UserPoints { get; set; }
+        public DbSet<UserStandings> UserStandings { get; set; }
     
         public virtual int PostBet(Nullable<int> pMatchsIdt, Nullable<int> pUsrIdt, string pHomeAway, Nullable<int> pScore)
         {
@@ -86,7 +89,7 @@ namespace Euro2016.EntityFramework
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostBetAway", pMatchsIdtParameter, pUsrIdtParameter, pScoreParameter);
         }
     
-        public virtual int PostBetFull(Nullable<int> pMatchsIdt, string pUsrName, Nullable<int> pScoreHome, Nullable<int> pScoreAway)
+        public virtual int PostBetFull(Nullable<int> pMatchsIdt, string pUsrName, Nullable<int> pScoreHome, Nullable<int> pScoreAway, string pIgnore)
         {
             var pMatchsIdtParameter = pMatchsIdt.HasValue ?
                 new ObjectParameter("pMatchsIdt", pMatchsIdt) :
@@ -104,7 +107,11 @@ namespace Euro2016.EntityFramework
                 new ObjectParameter("pScoreAway", pScoreAway) :
                 new ObjectParameter("pScoreAway", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostBetFull", pMatchsIdtParameter, pUsrNameParameter, pScoreHomeParameter, pScoreAwayParameter);
+            var pIgnoreParameter = pIgnore != null ?
+                new ObjectParameter("pIgnore", pIgnore) :
+                new ObjectParameter("pIgnore", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostBetFull", pMatchsIdtParameter, pUsrNameParameter, pScoreHomeParameter, pScoreAwayParameter, pIgnoreParameter);
         }
     
         public virtual int PostBetHome(Nullable<int> pMatchsIdt, Nullable<int> pUsrIdt, Nullable<int> pScore)
@@ -124,7 +131,53 @@ namespace Euro2016.EntityFramework
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostBetHome", pMatchsIdtParameter, pUsrIdtParameter, pScoreParameter);
         }
     
-        public virtual int PostScore(Nullable<int> pMatchIdt, Nullable<int> pScoreHome, Nullable<int> pScoreAway)
+        public virtual int PostScore(string pTeamHome, string pTeamAway, Nullable<int> pScoreHome, Nullable<int> pScoreAway)
+        {
+            var pTeamHomeParameter = pTeamHome != null ?
+                new ObjectParameter("pTeamHome", pTeamHome) :
+                new ObjectParameter("pTeamHome", typeof(string));
+    
+            var pTeamAwayParameter = pTeamAway != null ?
+                new ObjectParameter("pTeamAway", pTeamAway) :
+                new ObjectParameter("pTeamAway", typeof(string));
+    
+            var pScoreHomeParameter = pScoreHome.HasValue ?
+                new ObjectParameter("pScoreHome", pScoreHome) :
+                new ObjectParameter("pScoreHome", typeof(int));
+    
+            var pScoreAwayParameter = pScoreAway.HasValue ?
+                new ObjectParameter("pScoreAway", pScoreAway) :
+                new ObjectParameter("pScoreAway", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostScore", pTeamHomeParameter, pTeamAwayParameter, pScoreHomeParameter, pScoreAwayParameter);
+        }
+    
+        public virtual int PostBetMatch(string pUsrName, string pTeamHome, string pTeamAway, Nullable<int> pScoreHome, Nullable<int> pScoreAway)
+        {
+            var pUsrNameParameter = pUsrName != null ?
+                new ObjectParameter("pUsrName", pUsrName) :
+                new ObjectParameter("pUsrName", typeof(string));
+    
+            var pTeamHomeParameter = pTeamHome != null ?
+                new ObjectParameter("pTeamHome", pTeamHome) :
+                new ObjectParameter("pTeamHome", typeof(string));
+    
+            var pTeamAwayParameter = pTeamAway != null ?
+                new ObjectParameter("pTeamAway", pTeamAway) :
+                new ObjectParameter("pTeamAway", typeof(string));
+    
+            var pScoreHomeParameter = pScoreHome.HasValue ?
+                new ObjectParameter("pScoreHome", pScoreHome) :
+                new ObjectParameter("pScoreHome", typeof(int));
+    
+            var pScoreAwayParameter = pScoreAway.HasValue ?
+                new ObjectParameter("pScoreAway", pScoreAway) :
+                new ObjectParameter("pScoreAway", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostBetMatch", pUsrNameParameter, pTeamHomeParameter, pTeamAwayParameter, pScoreHomeParameter, pScoreAwayParameter);
+        }
+    
+        public virtual int PostScoreTeam(Nullable<int> pMatchIdt, Nullable<int> pScoreHome, Nullable<int> pScoreAway)
         {
             var pMatchIdtParameter = pMatchIdt.HasValue ?
                 new ObjectParameter("pMatchIdt", pMatchIdt) :
@@ -138,7 +191,7 @@ namespace Euro2016.EntityFramework
                 new ObjectParameter("pScoreAway", pScoreAway) :
                 new ObjectParameter("pScoreAway", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostScore", pMatchIdtParameter, pScoreHomeParameter, pScoreAwayParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PostScoreTeam", pMatchIdtParameter, pScoreHomeParameter, pScoreAwayParameter);
         }
     }
 }

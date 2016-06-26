@@ -12,12 +12,20 @@ namespace Euro2016.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class MatchsList
+    public partial class UserMatchBets
     {
+        public int Matchs_Idt { get; set; }
+        public int Usr_Idt { get; set; }
+        public string Usr_Name { get; set; }
+        public Nullable<int> Bet_Idt_Home { get; set; }
+        public Nullable<short> HomeScore { get; set; }
+        public Nullable<int> Bet_Idt_Away { get; set; }
+        public Nullable<short> AwayScore { get; set; }
         public int Idt { get; set; }
         public Nullable<short> Number { get; set; }
         public string Groups_Cod { get; set; }
         public Nullable<System.DateTime> ScheduleDate { get; set; }
+        public int Finished { get; set; }
         public int Phase_Idt { get; set; }
         public string Phase_Lbl { get; set; }
         public string Stadium_Name { get; set; }
@@ -30,6 +38,6 @@ namespace Euro2016.EntityFramework
         public string Team_Away_Label { get; set; }
         public string ImageAway { get; set; }
         public Nullable<short> Score_Away { get; set; }
-        public int MatchStarted { get; set; }
+        public int MatchIsFullFilled { get; set; }
     }
 }
