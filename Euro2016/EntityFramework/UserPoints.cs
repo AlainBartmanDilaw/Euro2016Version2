@@ -24,5 +24,6 @@ namespace Euro2016.EntityFramework
         public Nullable<short> Score_Home { get; set; }
         public Nullable<short> Score_Away { get; set; }
         public Nullable<int> Points { get; set; }
+        public int Usr_Idt { get; set; }
     }
 }

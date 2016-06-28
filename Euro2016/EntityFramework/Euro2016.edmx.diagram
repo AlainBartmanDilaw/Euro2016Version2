@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1a4996432f9343b18533c876394e3e2e" Name="Diagramme1">
+      <Diagram DiagramId="1a4996432f9343b18533c876394e3e2e" Name="Diagramme1" ZoomLevel="62">
         <EntityTypeShape EntityType="Euro2016BetsModel.bet" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Euro2016BetsModel.country" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Euro2016BetsModel.groups" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
@@ -32,9 +32,15 @@
         <AssociationConnector Association="Euro2016BetsModel.MatchsTeam_Team_Fk" ManuallyRouted="false" />
         <AssociationConnector Association="Euro2016BetsModel.Stadium_Towns_Fk" ManuallyRouted="false" />
         <AssociationConnector Association="Euro2016BetsModel.webpages_UsersInRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Euro2016BetsModel.UserMatchBets" Width="1.5" PointX="1.486280630103443" PointY="4.1958888192641961" />
-        <EntityTypeShape EntityType="Euro2016BetsModel.UserPoints" Width="1.5" PointX="4.7845110375362037" PointY="2.5765821349698035" />
-        <EntityTypeShape EntityType="Euro2016BetsModel.UserStandings" Width="1.5" PointX="7.1098867278126479" PointY="26.052922260972171" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserMatchBets" Width="1.5" PointX="15.625" PointY="2.5" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserPoints" Width="1.5" PointX="16" PointY="10.875" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.Pool" Width="1.5" PointX="0.5" PointY="15.625" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserPool" Width="1.5" PointX="3.375" PointY="15.5" />
+        <AssociationConnector Association="Euro2016BetsModel.Bet_Usr_Fk" />
+        <AssociationConnector Association="Euro2016BetsModel.UserPool_Pool_Fk" />
+        <AssociationConnector Association="Euro2016BetsModel.UserPool_User_Fk" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.UserStanding" Width="1.5" PointX="10.625" PointY="14.625" />
+        <EntityTypeShape EntityType="Euro2016BetsModel.FullUserStanding" Width="1.5" PointX="9.4289540468849964" PointY="28.462630911014337" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

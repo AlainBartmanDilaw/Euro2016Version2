@@ -839,3 +839,8 @@ td
         padding-left: 10px;
     }
 
+    td.Number
+    {
+        text-align:center;
+    }
+

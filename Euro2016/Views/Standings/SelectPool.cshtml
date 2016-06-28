@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "SelectPool";
+}
+
+<h2>SelectPool</h2>
+
+@using (Html.BeginForm()) {
+    <fieldset>
+           Pool List
+           @Html.DropDownList("PoolList")
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+}
+

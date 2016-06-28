@@ -15,15 +15,27 @@
           <EntitySet Name="Parameters" EntityType="Euro2016BetsModel.Store.Parameters" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="phase" EntityType="Euro2016BetsModel.Store.phase" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="players" EntityType="Euro2016BetsModel.Store.players" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pool" EntityType="Euro2016BetsModel.Store.Pool" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="scorer" EntityType="Euro2016BetsModel.Store.scorer" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="stadium" EntityType="Euro2016BetsModel.Store.stadium" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="team" EntityType="Euro2016BetsModel.Store.team" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="towns" EntityType="Euro2016BetsModel.Store.towns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserPool" EntityType="Euro2016BetsModel.Store.UserPool" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Usr" EntityType="Euro2016BetsModel.Store.Usr" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="webpages_Membership" EntityType="Euro2016BetsModel.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="webpages_OAuthMembership" EntityType="Euro2016BetsModel.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="webpages_Roles" EntityType="Euro2016BetsModel.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="webpages_UsersInRoles" EntityType="Euro2016BetsModel.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FullUserStanding" EntityType="Euro2016BetsModel.Store.FullUserStanding" store:Type="Views" store:Schema="dbo" store:Name="FullUserStanding">
+            <DefiningQuery>SELECT 
+      [FullUserStanding].[Pool_Idt] AS [Pool_Idt], 
+      [FullUserStanding].[User_Name] AS [User_Name], 
+      [FullUserStanding].[User_Idt] AS [User_Idt], 
+      [FullUserStanding].[PointsTotal] AS [PointsTotal], 
+      [FullUserStanding].[NbrMatchJoues] AS [NbrMatchJoues], 
+      [FullUserStanding].[NbrMatchNonJoues] AS [NbrMatchNonJoues]
+      FROM [dbo].[FullUserStanding] AS [FullUserStanding]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="MatchsList" EntityType="Euro2016BetsModel.Store.MatchsList" store:Type="Views" store:Schema="dbo" store:Name="MatchsList">
             <DefiningQuery>SELECT 
       [MatchsList].[Idt] AS [Idt], 
@@ -78,6 +90,7 @@
             <DefiningQuery>SELECT 
       [UserPoints].[Matchs_Idt] AS [Matchs_Idt], 
       [UserPoints].[Usr_Name] AS [Usr_Name], 
+      [UserPoints].[Usr_Idt] AS [Usr_Idt], 
       [UserPoints].[Number] AS [Number], 
       [UserPoints].[Team_Home] AS [Team_Home], 
       [UserPoints].[Team_Away] AS [Team_Away], 
@@ -88,13 +101,14 @@
       [UserPoints].[Points] AS [Points]
       FROM [dbo].[UserPoints] AS [UserPoints]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="UserStandings" EntityType="Euro2016BetsModel.Store.UserStandings" store:Type="Views" store:Schema="dbo" store:Name="UserStandings">
+          <EntitySet Name="UserStanding" EntityType="Euro2016BetsModel.Store.UserStanding" store:Type="Views" store:Schema="dbo" store:Name="UserStanding">
             <DefiningQuery>SELECT 
-      [UserStandings].[Usr_Name] AS [Usr_Name], 
-      [UserStandings].[Nbr] AS [Nbr], 
-      [UserStandings].[PointsTotal] AS [PointsTotal], 
-      [UserStandings].[NbrMatchNonJoues] AS [NbrMatchNonJoues]
-      FROM [dbo].[UserStandings] AS [UserStandings]</DefiningQuery>
+      [UserStanding].[User_Name] AS [User_Name], 
+      [UserStanding].[User_Idt] AS [User_Idt], 
+      [UserStanding].[PointsTotal] AS [PointsTotal], 
+      [UserStanding].[NbrMatchJoues] AS [NbrMatchJoues], 
+      [UserStanding].[NbrMatchNonJoues] AS [NbrMatchNonJoues]
+      FROM [dbo].[UserStanding] AS [UserStanding]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="UsrMatch" EntityType="Euro2016BetsModel.Store.UsrMatch" store:Type="Views" store:Schema="dbo" store:Name="UsrMatch">
             <DefiningQuery>SELECT 
@@ -129,6 +143,10 @@
             <End Role="matchs" EntitySet="matchs" />
             <End Role="bet" EntitySet="bet" />
           </AssociationSet>
+          <AssociationSet Name="Bet_Usr_Fk" Association="Euro2016BetsModel.Store.Bet_Usr_Fk">
+            <End Role="Usr" EntitySet="Usr" />
+            <End Role="bet" EntitySet="bet" />
+          </AssociationSet>
           <AssociationSet Name="fk_RoleId" Association="Euro2016BetsModel.Store.fk_RoleId">
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
             <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
@@ -160,6 +178,14 @@
           <AssociationSet Name="Team_Country_Fk" Association="Euro2016BetsModel.Store.Team_Country_Fk">
             <End Role="country" EntitySet="country" />
             <End Role="team" EntitySet="team" />
+          </AssociationSet>
+          <AssociationSet Name="UserPool_Pool_Fk" Association="Euro2016BetsModel.Store.UserPool_Pool_Fk">
+            <End Role="Pool" EntitySet="Pool" />
+            <End Role="UserPool" EntitySet="UserPool" />
+          </AssociationSet>
+          <AssociationSet Name="UserPool_User_Fk" Association="Euro2016BetsModel.Store.UserPool_User_Fk">
+            <End Role="Usr" EntitySet="Usr" />
+            <End Role="UserPool" EntitySet="UserPool" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="bet">
@@ -248,6 +274,14 @@
           <Property Name="Number" Type="smallint" />
           <Property Name="Team_Idt" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Pool">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cod" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Lib" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="scorer">
           <Key>
             <PropertyRef Name="Idt" />
@@ -282,6 +316,14 @@
           </Key>
           <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserPool">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Name="Idt" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Pool_Idt" Type="int" Nullable="false" />
+          <Property Name="User_Idt" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Usr">
           <Key>
@@ -331,6 +373,22 @@
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « Euro2016Bets.dbo.FullUserStanding » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="FullUserStanding">
+          <Key>
+            <PropertyRef Name="Pool_Idt" />
+            <PropertyRef Name="User_Name" />
+            <PropertyRef Name="User_Idt" />
+          </Key>
+          <Property Name="Pool_Idt" Type="int" Nullable="false" />
+          <Property Name="User_Name" Type="nvarchar" Nullable="false" MaxLength="55" />
+          <Property Name="User_Idt" Type="int" Nullable="false" />
+          <Property Name="PointsTotal" Type="int" />
+          <Property Name="NbrMatchJoues" Type="int" />
+          <Property Name="NbrMatchNonJoues" Type="int" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
       Avertissement 6002: La table/vue « Euro2016Bets.dbo.MatchsList » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
@@ -411,9 +469,11 @@
           <Key>
             <PropertyRef Name="Matchs_Idt" />
             <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="Usr_Idt" />
           </Key>
           <Property Name="Matchs_Idt" Type="int" Nullable="false" />
           <Property Name="Usr_Name" Type="nvarchar" Nullable="false" MaxLength="55" />
+          <Property Name="Usr_Idt" Type="int" Nullable="false" />
           <Property Name="Number" Type="smallint" />
           <Property Name="Team_Home" Type="nchar" MaxLength="3" />
           <Property Name="Team_Away" Type="nchar" MaxLength="3" />
@@ -424,15 +484,17 @@
           <Property Name="Points" Type="int" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
-      Avertissement 6002: La table/vue « Euro2016Bets.dbo.UserStandings » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      Avertissement 6002: La table/vue « Euro2016Bets.dbo.UserStanding » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
       -->
-        <EntityType Name="UserStandings">
+        <EntityType Name="UserStanding">
           <Key>
-            <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="User_Name" />
+            <PropertyRef Name="User_Idt" />
           </Key>
-          <Property Name="Usr_Name" Type="nvarchar" Nullable="false" MaxLength="55" />
-          <Property Name="Nbr" Type="int" />
+          <Property Name="User_Name" Type="nvarchar" Nullable="false" MaxLength="55" />
+          <Property Name="User_Idt" Type="int" Nullable="false" />
           <Property Name="PointsTotal" Type="int" />
+          <Property Name="NbrMatchJoues" Type="int" />
           <Property Name="NbrMatchNonJoues" Type="int" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
@@ -486,6 +548,18 @@
             </Principal>
             <Dependent Role="bet">
               <PropertyRef Name="Matchs_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Bet_Usr_Fk">
+          <End Role="Usr" Type="Euro2016BetsModel.Store.Usr" Multiplicity="1" />
+          <End Role="bet" Type="Euro2016BetsModel.Store.bet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usr">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="bet">
+              <PropertyRef Name="Usr_Idt" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -582,6 +656,30 @@
             </Principal>
             <Dependent Role="team">
               <PropertyRef Name="Country_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserPool_Pool_Fk">
+          <End Role="Pool" Type="Euro2016BetsModel.Store.Pool" Multiplicity="1" />
+          <End Role="UserPool" Type="Euro2016BetsModel.Store.UserPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pool">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="UserPool">
+              <PropertyRef Name="Pool_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserPool_User_Fk">
+          <End Role="Usr" Type="Euro2016BetsModel.Store.Usr" Multiplicity="1" />
+          <End Role="UserPool" Type="Euro2016BetsModel.Store.UserPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usr">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="UserPool">
+              <PropertyRef Name="User_Idt" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -714,7 +812,6 @@
           </FunctionImport>
           <EntitySet Name="UserMatchBets" EntityType="Euro2016BetsModel.UserMatchBets" />
           <EntitySet Name="UserPoints" EntityType="Euro2016BetsModel.UserPoints" />
-          <EntitySet Name="UserStandings" EntityType="Euro2016BetsModel.UserStandings" />
           <FunctionImport Name="PostBetMatch">
             <Parameter Name="pUsrName" Mode="In" Type="String" />
             <Parameter Name="pTeamHome" Mode="In" Type="String" />
@@ -727,6 +824,22 @@
             <Parameter Name="pScoreHome" Mode="In" Type="Int32" />
             <Parameter Name="pScoreAway" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Pool" EntityType="Euro2016BetsModel.Pool" />
+          <EntitySet Name="UserPool" EntityType="Euro2016BetsModel.UserPool" />
+          <AssociationSet Name="Bet_Usr_Fk" Association="Euro2016BetsModel.Bet_Usr_Fk">
+            <End Role="Usr" EntitySet="Usr" />
+            <End Role="bet" EntitySet="bet" />
+          </AssociationSet>
+          <AssociationSet Name="UserPool_Pool_Fk" Association="Euro2016BetsModel.UserPool_Pool_Fk">
+            <End Role="Pool" EntitySet="Pool" />
+            <End Role="UserPool" EntitySet="UserPool" />
+          </AssociationSet>
+          <AssociationSet Name="UserPool_User_Fk" Association="Euro2016BetsModel.UserPool_User_Fk">
+            <End Role="Usr" EntitySet="Usr" />
+            <End Role="UserPool" EntitySet="UserPool" />
+          </AssociationSet>
+          <EntitySet Name="UserStanding" EntityType="Euro2016BetsModel.UserStanding" />
+          <EntitySet Name="FullUserStanding" EntityType="Euro2016BetsModel.FullUserStanding" />
         </EntityContainer>
         <EntityType Name="bet">
           <Key>
@@ -738,6 +851,7 @@
           <Property Name="Matchs_Idt" Type="Int32" Nullable="false" />
           <Property Name="Usr_Idt" Type="Int32" Nullable="false" />
           <NavigationProperty Name="matchs" Relationship="Euro2016BetsModel.Bet_Matchs_Fk" FromRole="bet" ToRole="matchs" />
+          <NavigationProperty Name="Usr" Relationship="Euro2016BetsModel.Bet_Usr_Fk" FromRole="bet" ToRole="Usr" />
         </EntityType>
         <EntityType Name="country">
           <Key>
@@ -868,6 +982,8 @@
           <Property Name="Surname" Type="String" MaxLength="56" Unicode="true" FixedLength="false" />
           <Property Name="eMail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="webpages_Roles" Relationship="Euro2016BetsModel.webpages_UsersInRoles" FromRole="Usr" ToRole="webpages_Roles" />
+          <NavigationProperty Name="bet" Relationship="Euro2016BetsModel.Bet_Usr_Fk" FromRole="Usr" ToRole="bet" />
+          <NavigationProperty Name="UserPool" Relationship="Euro2016BetsModel.UserPool_User_Fk" FromRole="Usr" ToRole="UserPool" />
         </EntityType>
         <EntityType Name="webpages_Membership">
           <Key>
@@ -1099,6 +1215,7 @@
           <Key>
             <PropertyRef Name="Matchs_Idt" />
             <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="Usr_Idt" />
           </Key>
           <Property Type="Int32" Name="Matchs_Idt" Nullable="false" />
           <Property Type="String" Name="Usr_Name" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
@@ -1110,14 +1227,85 @@
           <Property Type="Int16" Name="Score_Home" />
           <Property Type="Int16" Name="Score_Away" />
           <Property Type="Int32" Name="Points" />
+          <Property Type="Int32" Name="Usr_Idt" Nullable="false" />
         </EntityType>
-        <EntityType Name="UserStandings">
+        <EntityType Name="Pool">
           <Key>
-            <PropertyRef Name="Usr_Name" />
+            <PropertyRef Name="Idt" />
           </Key>
-          <Property Type="String" Name="Usr_Name" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="Nbr" />
+          <Property Type="Int32" Name="Idt" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Cod" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Lib" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserPool" Relationship="Euro2016BetsModel.UserPool_Pool_Fk" FromRole="Pool" ToRole="UserPool" />
+        </EntityType>
+        <EntityType Name="UserPool">
+          <Key>
+            <PropertyRef Name="Idt" />
+          </Key>
+          <Property Type="Int32" Name="Idt" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Pool_Idt" Nullable="false" />
+          <Property Type="Int32" Name="User_Idt" Nullable="false" />
+          <NavigationProperty Name="Pool" Relationship="Euro2016BetsModel.UserPool_Pool_Fk" FromRole="UserPool" ToRole="Pool" />
+          <NavigationProperty Name="Usr" Relationship="Euro2016BetsModel.UserPool_User_Fk" FromRole="UserPool" ToRole="Usr" />
+        </EntityType>
+        <Association Name="Bet_Usr_Fk">
+          <End Type="Euro2016BetsModel.Usr" Role="Usr" Multiplicity="1" />
+          <End Type="Euro2016BetsModel.bet" Role="bet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usr">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="bet">
+              <PropertyRef Name="Usr_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserPool_Pool_Fk">
+          <End Type="Euro2016BetsModel.Pool" Role="Pool" Multiplicity="1" />
+          <End Type="Euro2016BetsModel.UserPool" Role="UserPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pool">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="UserPool">
+              <PropertyRef Name="Pool_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserPool_User_Fk">
+          <End Type="Euro2016BetsModel.Usr" Role="Usr" Multiplicity="1" />
+          <End Type="Euro2016BetsModel.UserPool" Role="UserPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usr">
+              <PropertyRef Name="Idt" />
+            </Principal>
+            <Dependent Role="UserPool">
+              <PropertyRef Name="User_Idt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserStanding">
+          <Key>
+            <PropertyRef Name="User_Name" />
+            <PropertyRef Name="User_Idt" />
+          </Key>
+          <Property Type="String" Name="User_Name" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="User_Idt" Nullable="false" />
           <Property Type="Int32" Name="PointsTotal" />
+          <Property Type="Int32" Name="NbrMatchJoues" />
+          <Property Type="Int32" Name="NbrMatchNonJoues" />
+        </EntityType>
+        <EntityType Name="FullUserStanding">
+          <Key>
+            <PropertyRef Name="Pool_Idt" />
+            <PropertyRef Name="User_Name" />
+            <PropertyRef Name="User_Idt" />
+          </Key>
+          <Property Type="Int32" Name="Pool_Idt" Nullable="false" />
+          <Property Type="String" Name="User_Name" Nullable="false" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="User_Idt" Nullable="false" />
+          <Property Type="Int32" Name="PointsTotal" />
+          <Property Type="Int32" Name="NbrMatchJoues" />
           <Property Type="Int32" Name="NbrMatchNonJoues" />
         </EntityType>
       </Schema>
@@ -1401,6 +1589,7 @@
           <EntitySetMapping Name="UserPoints">
             <EntityTypeMapping TypeName="Euro2016BetsModel.UserPoints">
               <MappingFragment StoreEntitySet="UserPoints">
+                <ScalarProperty Name="Usr_Idt" ColumnName="Usr_Idt" />
                 <ScalarProperty Name="Points" ColumnName="Points" />
                 <ScalarProperty Name="Score_Away" ColumnName="Score_Away" />
                 <ScalarProperty Name="Score_Home" ColumnName="Score_Home" />
@@ -1414,18 +1603,49 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserStandings">
-            <EntityTypeMapping TypeName="Euro2016BetsModel.UserStandings">
-              <MappingFragment StoreEntitySet="UserStandings">
-                <ScalarProperty Name="NbrMatchNonJoues" ColumnName="NbrMatchNonJoues" />
-                <ScalarProperty Name="PointsTotal" ColumnName="PointsTotal" />
-                <ScalarProperty Name="Nbr" ColumnName="Nbr" />
-                <ScalarProperty Name="Usr_Name" ColumnName="Usr_Name" />
+          <FunctionImportMapping FunctionImportName="PostBetMatch" FunctionName="Euro2016BetsModel.Store.PostBetMatch" />
+          <FunctionImportMapping FunctionImportName="PostScoreTeam" FunctionName="Euro2016BetsModel.Store.PostScoreTeam" />
+          <EntitySetMapping Name="Pool">
+            <EntityTypeMapping TypeName="Euro2016BetsModel.Pool">
+              <MappingFragment StoreEntitySet="Pool">
+                <ScalarProperty Name="Lib" ColumnName="Lib" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="PostBetMatch" FunctionName="Euro2016BetsModel.Store.PostBetMatch" />
-          <FunctionImportMapping FunctionImportName="PostScoreTeam" FunctionName="Euro2016BetsModel.Store.PostScoreTeam" />
+          <EntitySetMapping Name="UserPool">
+            <EntityTypeMapping TypeName="Euro2016BetsModel.UserPool">
+              <MappingFragment StoreEntitySet="UserPool">
+                <ScalarProperty Name="User_Idt" ColumnName="User_Idt" />
+                <ScalarProperty Name="Pool_Idt" ColumnName="Pool_Idt" />
+                <ScalarProperty Name="Idt" ColumnName="Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserStanding">
+            <EntityTypeMapping TypeName="Euro2016BetsModel.UserStanding">
+              <MappingFragment StoreEntitySet="UserStanding">
+                <ScalarProperty Name="NbrMatchNonJoues" ColumnName="NbrMatchNonJoues" />
+                <ScalarProperty Name="NbrMatchJoues" ColumnName="NbrMatchJoues" />
+                <ScalarProperty Name="PointsTotal" ColumnName="PointsTotal" />
+                <ScalarProperty Name="User_Idt" ColumnName="User_Idt" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FullUserStanding">
+            <EntityTypeMapping TypeName="Euro2016BetsModel.FullUserStanding">
+              <MappingFragment StoreEntitySet="FullUserStanding">
+                <ScalarProperty Name="NbrMatchNonJoues" ColumnName="NbrMatchNonJoues" />
+                <ScalarProperty Name="NbrMatchJoues" ColumnName="NbrMatchJoues" />
+                <ScalarProperty Name="PointsTotal" ColumnName="PointsTotal" />
+                <ScalarProperty Name="User_Idt" ColumnName="User_Idt" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="Pool_Idt" ColumnName="Pool_Idt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

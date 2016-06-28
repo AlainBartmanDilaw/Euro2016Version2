@@ -12,11 +12,13 @@ namespace Euro2016.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class UserStandings
+    public partial class FullUserStanding
     {
-        public string Usr_Name { get; set; }
-        public Nullable<int> Nbr { get; set; }
+        public int Pool_Idt { get; set; }
+        public string User_Name { get; set; }
+        public int User_Idt { get; set; }
         public Nullable<int> PointsTotal { get; set; }
+        public Nullable<int> NbrMatchJoues { get; set; }
         public Nullable<int> NbrMatchNonJoues { get; set; }
     }
 }

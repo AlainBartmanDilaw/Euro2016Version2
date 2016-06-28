@@ -49,7 +49,10 @@ namespace Euro2016.EntityFramework
         public DbSet<UsrMatch> UsrMatch { get; set; }
         public DbSet<UserMatchBets> UserMatchBets { get; set; }
         public DbSet<UserPoints> UserPoints { get; set; }
-        public DbSet<UserStandings> UserStandings { get; set; }
+        public DbSet<Pool> Pool { get; set; }
+        public DbSet<UserPool> UserPool { get; set; }
+        public DbSet<UserStanding> UserStanding { get; set; }
+        public DbSet<FullUserStanding> FullUserStanding { get; set; }
     
         public virtual int PostBet(Nullable<int> pMatchsIdt, Nullable<int> pUsrIdt, string pHomeAway, Nullable<int> pScore)
         {

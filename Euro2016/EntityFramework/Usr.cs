@@ -17,6 +17,8 @@ namespace Euro2016.EntityFramework
         public Usr()
         {
             this.webpages_Roles = new HashSet<webpages_Roles>();
+            this.bet = new HashSet<bet>();
+            this.UserPool = new HashSet<UserPool>();
         }
     
         public int Idt { get; set; }
@@ -25,5 +27,7 @@ namespace Euro2016.EntityFramework
         public string eMail { get; set; }
     
         public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
+        public virtual ICollection<bet> bet { get; set; }
+        public virtual ICollection<UserPool> UserPool { get; set; }
     }
 }

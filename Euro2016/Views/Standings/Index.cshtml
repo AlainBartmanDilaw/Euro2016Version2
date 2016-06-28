@@ -1,0 +1,57 @@
+﻿@using Euro2016.Models;
+
+@*@model Standings*@
+
+@{
+    ViewBag.Title = "Standings";
+}
+
+<h2>Standings</h2>
+
+@using (Html.BeginForm()) {
+    <fieldset>
+           
+           @Html.DropDownList("PoolList")
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+}
+
+@*
+@using (@Html.BeginForm("Index", "Standings"))
+{
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="Standings/PoolChoosen">
+    <select name="Pool">
+        <option value="-1">Tous</option>
+        @for(int i=0;i<Model.Pools.Count;i++)
+        {
+            <option value="">@Html.DisplayFor(model => model.Pools[i].Cod)</option>
+        }
+    </select>
+    <p><input type="button" value="Sélect."</p>
+    <table>
+    @for (int i = 0; i < Model.FullUserStandings.Count; i++)
+    {
+    }
+    </table>
+  <br><br>
+
+</form>
+
+</body>
+</html>
+
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+*@

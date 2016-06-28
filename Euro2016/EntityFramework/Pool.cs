@@ -12,15 +12,17 @@ namespace Euro2016.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class bet
+    public partial class Pool
     {
-        public int Idt { get; set; }
-        public string HomeAway { get; set; }
-        public Nullable<short> Score { get; set; }
-        public int Matchs_Idt { get; set; }
-        public int Usr_Idt { get; set; }
+        public Pool()
+        {
+            this.UserPool = new HashSet<UserPool>();
+        }
     
-        public virtual matchs matchs { get; set; }
-        public virtual Usr Usr { get; set; }
+        public int Idt { get; set; }
+        public string Cod { get; set; }
+        public string Lib { get; set; }
+    
+        public virtual ICollection<UserPool> UserPool { get; set; }
     }
 }

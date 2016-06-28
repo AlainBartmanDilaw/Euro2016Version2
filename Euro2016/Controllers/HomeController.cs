@@ -49,5 +49,13 @@ namespace Euro2016.Controllers
 
             return View();
         }
+
+        public ActionResult Standings()
+        {
+            ViewBag.Message = "Standings";
+
+            return View();
+        }
+
     }
 }
