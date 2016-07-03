@@ -1,16 +1,12 @@
 ﻿@{
-    ViewBag.Title = "SelectPool";
+    ViewBag.Title = "Sélection du Groupe de joueurs : " + ViewBag.messageString;
 }
 
-<h2>SelectPool</h2>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Index", "Standings", FormMethod.Post)) {
     <fieldset>
-           Pool List
-           @Html.DropDownList("PoolList")
-
+        Sélectionner un groupe : @Html.DropDownList("PoolList")
         <p>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Valider" />
         </p>
     </fieldset>
 }

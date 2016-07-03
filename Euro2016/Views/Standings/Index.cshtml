@@ -1,22 +1,27 @@
 ﻿@using Euro2016.Models;
-
-@*@model Standings*@
-
+@model Standings
 @{
     ViewBag.Title = "Standings";
 }
 
-<h2>Standings</h2>
+<h2>Classements</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Index", "Standings", FormMethod.Post))
+{
     <fieldset>
-           
-           @Html.DropDownList("PoolList")
-
-        <p>
-            <input type="submit" value="Submit" />
-        </p>
+@*           @Html.DropDownList("PoolList")
+           <input type="submit" value="Valider" />*@
     </fieldset>
+
+    <table>
+        @for (int i = 0; i < Model.FullUserStandings.Count; i++)
+        {
+        <tr>
+            <td>@Html.DisplayFor(model => model.FullUserStandings[i].User_Name)</td>
+            <td>@Html.DisplayFor(model => model.FullUserStandings[i].PointsTotal)</td>
+        </tr>
+        }
+    </table>
 }
 
 @*

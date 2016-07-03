@@ -17,12 +17,30 @@ namespace Euro2016.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            return IndexPool("");
+        }
+
+        [HttpGet]
+        public ActionResult IndexPool(String poolValue)
+        {
             Standings model = new Standings();
 
-            model.FullUserStandings = (from o in db.FullUserStanding select o).ToList();
-            model.Pools = (from o in db.Pool select o).ToList();
+            model.FullUserStandings = (from o in db.FullUserStanding select o)
+                                        .Where(x => x.Pool_Idt == -1)
+                                        .OrderByDescending(x => x.PointsTotal)
+                                        .ToList();
+            model.Pools = (from o in db.Pool select o)
+                            .ToList();
+
+            SelectPool();
+            PrintStandings();
 
             return View(model);
+        }
+
+        private void PrintStandings()
+        {
+            
         }
 
         public ActionResult SelectPool()
@@ -34,7 +52,7 @@ namespace Euro2016.Controllers
         private void SetViewBagPool(string selectedPool)
         {
             IEnumerable<Pool> values = (from val in db.Pool select val).ToList();
-            values = values.Concat(new[] { new Pool { Cod="",Idt=-1,Lib="" } });
+            values = values.Concat(new[] { new Pool { Cod = "", Idt = -1, Lib = "" } });
             values = values.OrderBy(a => a.Cod);
 
             IEnumerable<SelectListItem> items =
@@ -42,6 +60,13 @@ namespace Euro2016.Controllers
                 select new SelectListItem { Text = value.Lib.ToString(), Value = value.Idt.ToString(), Selected = value.Cod.ToString() == selectedPool };
 
             ViewBag.PoolList = items;
+        }
+
+        public ActionResult PoolChosen(string PoolValue)
+        {
+            ViewBag.messageString = PoolValue;
+            SetViewBagPool(PoolValue);
+            return Index();
         }
 
     }

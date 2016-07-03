@@ -28,7 +28,8 @@
                             <li>@Html.ActionLink("Présentation", "Presentation", "Home")</li>
                             <li>@Html.ActionLink("Resultats", "Index", "Resultats")</li>
                             <li>@Html.ActionLink("Vos paris", "Index", "UsrMatch")</li>
-                            <li><a href=@Url.Content("~/Standings/SelectPool")>Classements</a></li>
+                            <li>@Html.ActionLink("Classements", "Index", "Standings")</li>
+                            @*<li><a href=@Url.Content("~/Standings/SelectPool")>Classements</a></li>*@
                             <li>@Html.ActionLink("À propos de", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>
